@@ -8,7 +8,6 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
    
    <ul>
    <li><b>.gradient-h</b>            - CSS3 - horizontal gradient (works also on IE)</li>
-
    <code>.gradient-h(#fff, #fbfbfb);</code>
 
    <li><b>.gradient-hline</b>         - CSS3 - horizontal-linear gradient (works also on IE)</li>
@@ -19,7 +18,10 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
    
    <li><b>.gradient-radial</b>       - CSS3 - radial gradient (works also on IE9+)</li>
    <code>.gradient-radial(#fff, #fbfbfb);</code>
-   
+
+   <li><b>.gradient-direction</b>    - CSS3 - radial gradient (works also on IE9+)</li>
+   <code>.gradient-direction(#fff, #fbfbfb, 45deg);</code>
+
    <br/>
 
    <li><b>.bordered</b>              - custom borders color and size style</li> 
@@ -52,34 +54,42 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
    <li><b>.opacity</b>               - transparency for the elements</li>
    <code>.opacity(0.5);</code>
    
-   <li><b>.font</b>                  - fast fonts editing</li>
+   <li><b>.font</b>                  - font size, line-height and weight</li>
    <code>.font(1em, 1.25em, bold);</code>
    
    <br/>
 
-   <li><b>.rotation</b>              - CSS3 - simple rotate elements</li>
-   <code>.rotation(5deg);</code>
-   
-   <li><b>.scale</b>                 - CSS3 - elements scaling</li>
+   <li><b>.rotate</b>                - CSS3 - simple rotate elements</li>
+   <code>.rotate(5deg);</code>
+
+   <li><b>.scale</b>                 - CSS3 - the elements scaling</li>
    <code>.scale(1.5);</code>
-   
-   <li><b>.translate</b>             - CSS3 - transform elements (works also on IE9+)</li>
-   <code>.translate(10, 0);</code>
-   
+
+   <li><b>.skew</b>                  - CSS3 - the elements turns in a given angle</li>
+   <code>.skew(20deg, 40deg);</code>
+
    <li><b>.transition</b>            - CSS3 - transition effects</li>
    <code>.transition(all, 0.2s, ease-out, 1s);</code>
-   
+
    <li><b>.animation</b>             - CSS3 - simple add animation (required: <http://daneden.me/animate/> but you also can create your own animation)</li>
    <code>.animation(fadeOut);</code> or <code>.animation(fadeIn, 0, ease, 2s, 1, normal, running);</code>
-   
+
+   <li><b>.translate</b>             - CSS3 - transform elements (works also on IE9+)</li>
+   <code>.translate(10, 0);</code>
+
    <br/>
 
    <li><b>.columns</b>               - CSS3 - text management</li>
    <code>.columns(250, 0, 50, #EEE, solid, 1px);</code>
+
+   <li><b>.size</b>                  - CSS3 - simple determination 'width & height' of elements</li>
+   <code>.size(40px, 50px);</code>
    
+   <li><b>.clearfix</b>              - CSS3 - clearing floats</li>
+   <code>.clearfix;</code>
+
    <li>
-   <b>.less-button</b>           - quickly create your own buttons
-   <br/>.less-button(background color, border color, text color, text shadow, font weight, padding, rounded corners)
+   <b>.less-button</b>               - quickly create your own buttons (background color, border color, text color, text shadow, font weight, padding, rounded corners)
    </li>
    <code>.less-button(#ccc, #999, #444, 0 1px 0 rgba(255,255,255,0.40), normal, 6px 18px, 4px)</code>
  </ul>
