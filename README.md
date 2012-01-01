@@ -11,7 +11,7 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
    <code>.gradient-h(#fff, #fbfbfb);</code>
 
    <li><b>.gradient-hline</b>         - CSS3 - horizontal linear gradient (works also on IE)</li>
-   <code>.gradient-h(#B0BAC5, #9DA7B2, #919CA8, #7E8A98);</code>
+   <code>.gradient-hline(#B0BAC5, #9DA7B2, #919CA8, #7E8A98);</code>
 
    <li><b>.gradient-v</b>            - CSS3 - veritical gradient (works also on IE)</li>
    <code>.gradient-v(#fff, #fbfbfb);</code>
