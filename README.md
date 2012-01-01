@@ -10,7 +10,7 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
    <li><b>.gradient-h</b>            - CSS3 - horizontal gradient (works also on IE)</li>
    <code>.gradient-h(#fff, #fbfbfb);</code>
 
-   <li><b>.gradient-hline</b>         - CSS3 - horizontal-linear gradient (works also on IE)</li>
+   <li><b>.gradient-hline</b>         - CSS3 - horizontal linear gradient (works also on IE)</li>
    <code>.gradient-h(#B0BAC5, #9DA7B2, #919CA8, #7E8A98);</code>
 
    <li><b>.gradient-v</b>            - CSS3 - veritical gradient (works also on IE)</li>
@@ -19,8 +19,8 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
    <li><b>.gradient-radial</b>       - CSS3 - radial gradient (works also on IE9+)</li>
    <code>.gradient-radial(#fff, #fbfbfb);</code>
 
-   <li><b>.gradient-direction</b>    - CSS3 - radial gradient <i>(works also on IE9+) (at the end enter only the value)</i></li>
-   <code>.gradient-direction(#fff, #fbfbfb, 45deg);</code>
+   <li><b>.gradient-direction</b>    - CSS3 - gradient directional position <i>(at the end enter only the value)</i></li>
+   <code>.gradient-direction(#fff, #fbfbfb, 45);</code>
 
    <br/>
 
@@ -41,7 +41,7 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
    <li><b>.rounded</b>               - CSS3 - rounded corners</li>
    <code>.rounded(4px);</code> or <code>.rounded(4px 2px 3px 0);</code>
 
-   <li><b>.rotate</b>                - CSS3 - simple rotate elements <i>(enter only the value)</i></li>
+   <li><b>.rotate</b>                - CSS3 - simple elements rotate <i>(enter only the value)</i></li>
    <code>.rotate(5);</code>
 
    <li><b>.scale</b>                 - CSS3 - the elements scaling</li>
@@ -53,7 +53,7 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
    <li><b>.translate</b>             - CSS3 - transform elements <i>(works also on IE9+)</i></li>
    <code>.translate(10, 0);</code>
 
-   <li><b>.transition</b>            - CSS3 - transition effects</li>
+   <li><b>.transition</b>            - CSS3 - transition effects <i>(property, duration, timing, delay)</i></li>
    <code>.transition(all, 0.2s, ease-out, 1s);</code>
 
    <li><b>.animation</b>             - CSS3 - simple add animation <i>(required: <http://daneden.me/animate/> but you also can create your own animation)</i></li>
@@ -61,8 +61,8 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
 
    <br/>
 
-   <li><b>.columns</b>               - CSS3 - text management</li>
-   <code>.columns(250, 0, 50, #EEE, solid, 1px);</code>
+   <li><b>.columns</b>               - CSS3 - text management <i>(width, count, gap, rule)</i></li>
+   <code>.columns(250, 0, 50, 1px solid #EEE);</code>
 
    <br/>
 
@@ -75,13 +75,13 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
    <li><b>.font</b>                  - font-size, line-height and weight <i>(enter only the values ​​in 'px' - everything will be converted to 'em')</i></li>
    <code>.font(16, 20, bold);</code>
 
-   <li><b>.size</b>                  - CSS3 - simple determination 'width & height' of elements <i>(enter only the values 'px' will be added automatically)</i></li>
+   <li><b>.size</b>                  - CSS3 - simple determination 'width & height' of elements <i>(enter only the values. 'px' will be added automatically)</i></li>
    <code>.size(40, 50);</code>
 
-   <li><b>.opacity</b>               - transparency for the elements</li>
+   <li><b>.opacity</b>               - element transparency</li>
    <code>.opacity(0.5);</code>
 
-   <li><b>.bordered</b>              - custom borders color and size style</li> 
+   <li><b>.bordered</b>              - custom borders: color and weight</li> 
    <code>.bordered(#EEE, #CCC, #999, #333, 1px);</code>
 
    <li><b>.less-button</b>               - quickly create your own buttons <i>(background-color, border-color, text color, text-shadow, font-weight, padding, rounded corners)</i></li>
