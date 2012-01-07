@@ -72,7 +72,7 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
    <li><b>.clearfix</b>              - CSS3 - clearing floats</li>
    <code>.clearfix;</code>
 
-   <li><b>.font</b>                  - font-size, line-height and weight <i>(enter only the values ​​in 'px' - everything will be converted to 'em')</i></li>
+   <li><b>.font</b>                  - font-size, line-height and weight <i>(enter only the values (​​in 'px') - if you use 'ems'  open the dss.less file and delete a comment hash from values (in font option))</i></li>
    <code>.font(16, 20, bold);</code>
 
    <li><b>.size</b>                  - CSS3 - simple determination 'width & height' of elements <i>(enter only the values. 'px' will be added automatically)</i></li>

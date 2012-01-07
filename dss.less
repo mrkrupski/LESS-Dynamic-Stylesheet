@@ -217,8 +217,8 @@
 }
 
 .font (@size: 40, @lineheight: 20, @weight: normal) {
-  font-size: @size / 16 + 0em;
-  line-height: @lineheight / 16 + 0em;
+  font-size: @size + 0px /* / 16 + 0em*/;
+  line-height: @lineheight + 0px /* / 16 + 0em*/;
   font-weight: @weight;
 }
 
