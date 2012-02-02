@@ -1,1 +1,298 @@
-My GitHub Page
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>LESS DSS (dynamic stylesheet)</title>
+
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+
+  <!--[if lt IE 9]>
+  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div id="container">
+
+    <h1 class="remove-bottom">LESS <span class="colorletter">D</span>SS <h4>(dynamic stylesheet)</h4></h1>
+    <h3>CSS Backgrounds</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mixin</th>
+          <th>Parameters</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.gradient-h();</code></td>
+          <td><code><span class="c1">@</span>startColor<span class="c2">,</span> <span class="c1">@</span>endColor</code></td>
+          <td>Horizontal background gradient.</td>
+        </tr>
+
+        <tr>
+          <td><code>.gradient-hline();</code></td>
+          <td><code><span class="c1">@</span>startColor<span class="c2">,</span> <span class="c1">@</span>middleColor1<span class="c2">,</span> <span class="c1">@</span>middleColor2<span class="c2">,</span> <span class="c1">@</span>endColor</code></td>
+          <td>Horizontal-linear background gradient.</td>
+        </tr>
+
+        <tr>
+          <td><code>.gradient-v();</code></td>
+          <td><code><span class="c1">@</span>startColor<span class="c2">,</span> <span class="c1">@</span>endColor</code></td>
+          <td>Vertical background gradient.</td>
+        </tr>
+
+        <tr>
+          <td><code>.gradient-v3colors();</code></td>
+          <td><code><span class="c1">@</span>startColor<span class="c2">,</span> <span class="c1">@</span>middleColor<span class="c2">,</span> <span class="c1">@</span>colorStop<span class="c2">,</span> <span class="c1">@</span>endColor</code></td>
+          <td>Three-color background gradient.</td>
+        </tr>
+
+        <tr>
+          <td><code>.gradient-radial();</code></td>
+          <td><code><span class="c1">@</span>innerColor<span class="c2">,</span> <span class="c1">@</span>outerColor</code></td>
+          <td>Radial background gradient.</td>
+        </tr>
+
+        <tr>
+          <td><code>.gradient-direction();</code></td>
+          <td><code><span class="c1">@</span>startColor<span class="c2">,</span> <span class="c1">@</span>endColor<span class="c2">,</span> <span class="c1">@</span>value</code></td>
+          <td>Directional background gradient.</td>
+        </tr>
+
+
+        <tr>
+          <td><code>.background-clip();</code></td>
+          <td><code><span class="c1">@</span>value</code></td>
+          <td>Crop the backgroud of an element.</td>
+        </tr>
+
+        <tr>
+          <td><code>.background-size();</code></td>
+          <td><code><span class="c1">@</span>value</code></td>
+          <td>Control the size of background images via CSS3.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>CSS3 Borders</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mixin</th>
+          <th>Parameters</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.box-shadow();</code></td>
+          <td><code><span class="c3">"</span><span class="c1">@</span>values<span class="c3">"</span></code></td>
+          <td>The box-shadow property attaches one or more drop-shadows to the box (always add <b>"</b> before and after values - thanks to that you can use many shadows at the same time).</td>
+        </tr>
+
+        <tr>
+          <td><code>.border-image();</code></td>
+          <td><code><span class="c1">@</span>source<span class="c2">,</span> <span class="c1">@</span>slice<span class="c2">,</span> <span class="c1">@</span>width<span class="c2">,</span> <span class="c1">@</span>outset<span class="c2">,</span> <span class="c1">@</span>repeat</code></td>
+          <td>Define an image to be used instead of the normal border of an element.</td>
+        </tr>
+
+        <tr>
+          <td><code>.rounded();</code></td>
+          <td><code><span class="c1">@</span>radius</code></td>
+          <td>Round the corners of an element. Can be a single value or four space-separated values.</td>
+        </tr>
+
+        <tr>
+          <td><code>.box-sizing();</code></td>
+          <td><code><span class="c1">@</span>type</code></td>
+          <td>Change the box model for an element (e.g., border-box for a full-width input).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>CSS3 2D Transforms</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mixin</th>
+          <th>Parameters</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.translate();</code></td>
+          <td><code><span class="c1">@</span>x<span class="c2">,</span> <span class="c1">@</span>y</code></td>
+          <td>With the translate() method, the element moves from its current position (X-axis - left, Y-axis - top).</td>
+        </tr>
+
+        <tr>
+          <td><code>.rotate();</code></td>
+          <td><code><span class="c1">@</span>values</code></td>
+          <td>With the rotate() method, the element rotates clockwise at a given degree.</td>
+        </tr>
+
+        <tr>
+          <td><code>.scale();</code></td>
+          <td><code><span class="c1">@</span>ratio</code></td>
+          <td>With the scale() method, the element increases or decreases the size.</td>
+        </tr>
+
+        <tr>
+          <td><code>.skew();</code></td>
+          <td><code><span class="c1">@</span>value<span class="c2">,</span> <span class="c1">@</span>value2</code></td>
+          <td>With the skew() method, the element turns in a given angle (X-axis - horizontal, Y-axis - vertical).</td>
+        </tr>
+
+        <tr>
+          <td><code>.matrix();</code></td>
+          <td><code><span class="c1">@</span>rotate<span class="c2">,</span> <span class="c1">@</span>scale<span class="c2">,</span> <span class="c1">@</span>translate<span class="c2">,</span> <span class="c1">@</span>skew<span class="c2">,</span> <span class="c1">@</span>x<span class="c2">,</span> <span class="c1">@</span>y</code></td>
+          <td>The matrix() method combines all of the 2D transform methods into one.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>CSS3 3D Transforms</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mixin</th>
+          <th>Parameters</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.rotateX();</code></td>
+          <td><code><span class="c1">@</span>value</code></td>
+          <td>With the rotateX() method, the element rotates around its X-axis at a given degree.</td>
+        </tr>
+
+        <tr>
+          <td><code>.rotateY();</code></td>
+          <td><code><span class="c1">@</span>value</code></td>
+          <td>With the rotateY() method, the element rotates around its Y-axis at a given degree.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>CSS3 Transitions</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mixin</th>
+          <th>Parameters</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.transition();</code></td>
+          <td><code><span class="c1">@</span>property<span class="c2">,</span> <span class="c1">@</span>duration<span class="c2">,</span> <span class="c1">@</span>timing<span class="c2">,</span> <span class="c1">@</span>delay</code></td>
+          <td>Add an effect when changing from one style to another.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>CSS3 Animations</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mixin</th>
+          <th>Parameters</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.animate();</code></td>
+          <td><code><span class="c1">@</span>name<span class="c2">,</span> <span class="c1">@</span>duration<span class="c2">,</span> <span class="c1">@</span>timing<span class="c2">,</span> <span class="c1">@</span>delay<span class="c2">,</span> <span class="c1">@</span>iteration-count<span class="c2">,</span> <span class="c1">@</span>direction<span class="c2">,</span> <span class="c1">@</span>state</code></td>
+          <td>Create animations (checkout: <a href="http://daneden.me/animate/" target="_blank">http://daneden.me/animate/</a> - pack of done animations).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>CSS3 Multiple Columns</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mixin</th>
+          <th>Parameters</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.columns();</code></td>
+          <td><code><span class="c1">@</span>columnWidth<span class="c2">,</span> <span class="c1">@</span>columnGap<span class="c2">,</span> <span class="c1">@</span>columnRule</code></td>
+          <td>Create multiple columns for laying out text (like in newspapers).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>CSS Misc</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mixin</th>
+          <th>Parameters</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.clearfix();</code></td>
+          <td><code><span class="c2"><i>none</i></span></code></td>
+          <td>Add to any parent to clear floats within.</td>
+        </tr>
+
+        <tr>
+          <td><code>.font();</code></td>
+          <td><code><span class="c1">@</span>size<span class="c2">,</span> <span class="c1">@</span>lineheight<span class="c2">,</span> <span class="c1">@</span>weight</code></td>
+          <td>Font-size, line-height and weight.</td>
+        </tr>
+
+        <tr>
+          <td><code>.size();</code></td>
+          <td><code><span class="c1">@</span>height<span class="c2">,</span> <span class="c1">@</span>width</code></td>
+          <td>Quickly set the height and width on one line (you can enter only the values).</td>
+        </tr>
+
+        <tr>
+          <td><code>.square();</code></td>
+          <td><code><span class="c1">@</span>value</code></td>
+          <td>Use this if height and width have the same values (can use without px/%/em - only numbers).</td>
+        </tr>
+
+        <tr>
+          <td><code>.opacity();</code></td>
+          <td><code><span class="c1">@</span>opacity</code></td>
+          <td>Elements transparency (full = 1 not 100, so use e.g. 0.5, .8, etc.).</td>
+        </tr>
+
+        <tr>
+          <td><code>.less-button();</code></td>
+          <td><code><span class="c1">@</span>bg-color<span class="c2">,</span> <span class="c1">@</span>border-color<span class="c2">,</span> <span class="c1">@</span>text-color<span class="c2">,</span> <span class="c1">@</span>text-shadow<span class="c2">,</span> <span class="c1">@</span>padding<span class="c2">,</span> <span class="c1">@</span>corners</code></td>
+          <td>Quickly create a customize button.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</body>
+</html>

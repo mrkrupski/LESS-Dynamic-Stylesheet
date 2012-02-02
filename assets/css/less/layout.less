@@ -1,0 +1,26 @@
+@import "dss.less";
+
+body { background: url('../img/bg.png') repeat; }
+#container { margin: 60px auto; }
+
+h1, h4 { text-align: center; }
+h1 .colorletter { background: #D14; padding: 0 7px 0 11px; color: #fff; .rounded(100%); }
+h4 {  }
+
+table { background: #fff; width: 100%; .outer-shadow(0 5px 8px -3px, rgba(0,0,0,.1)); }
+table, th, td { border: 1px solid #DDD; }
+th, td { padding: 8px 12px; text-align: left; vertical-align: middle; }
+th { color: #222; }
+tr:nth-child(2n+1) td { background: #f9f9f9; }
+tr td:last-child { width: 330px; }
+td code { font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #049cdb; border: 1px solid #ddd; line-height: 30px; .rounded(4px); padding: 3px 6px; background: #fff; }
+tr td:first-child { width: 160px; }
+tr td:first-child code { color: teal; }
+
+h3 { margin-top: 60px; }
+
+.c1 { color: #D14; }
+.c2 { color: #888; }
+.c3 { color: #000; }
+
+.remove-bottom { margin-bottom: 0 !important; }
