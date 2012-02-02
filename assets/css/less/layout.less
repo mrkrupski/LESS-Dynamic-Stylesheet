@@ -3,9 +3,17 @@
 body { background: url('../img/bg.png') repeat; }
 #container { margin: 60px auto; }
 
+.hidden { display: none; visibility: hidden; }
+.show { display: block; visibility: visible; }
+
+#logo { text-decoration: none;  }
+
+#logo h4.odow { .hidden; }
+#logo:hover h4.otit { .hidden; }
+#logo:hover h4.odow { .show; }
+
 h1, h4 { text-align: center; }
-h1 .colorletter { background: #D14; padding: 0 7px 0 11px; color: #fff; .rounded(100%); }
-h4 {  }
+h1 .colorletter { background: #D14; padding: 0 7px 0 11.5px; color: #fff; .rounded(100%); }
 
 table { background: #fff; width: 100%; .outer-shadow(0 5px 8px -3px, rgba(0,0,0,.1)); }
 table, th, td { border: 1px solid #DDD; }
@@ -24,3 +32,8 @@ h3 { margin-top: 60px; }
 .c3 { color: #000; }
 
 .remove-bottom { margin-bottom: 0 !important; }
+
+hr { width: 300px; position: absolute; top: 30px; }
+hr:first-child { right: 0; }
+
+#foot { text-align: center; margin-top: 60px; overflow: hidden; }
