@@ -3,6 +3,8 @@ LESS DSS (dynamic stylesheet)
 
 A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.org" target="_blank">lesscss.org</a>
 <br/>I recommend '<a href="http://incident57.com/codekit/" target="_blank">CodeKit</a>' app for auto compress (not only for less) ;) (OS X)
+<br/>
+List of all functions is on: <a href="http://mrkrupski.github.com/LESS-Dynamic-Stylesheet/" target="_blank">mrkrupski.github.com/LESS-Dynamic-Stylesheet/</a>
 
    <b>Features:</b>
 
