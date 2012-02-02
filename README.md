@@ -6,9 +6,11 @@ A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.
 <br/>
 List of all functions is on: <a href="http://mrkrupski.github.com/LESS-Dynamic-Stylesheet/" target="_blank">mrkrupski.github.com/LESS-Dynamic-Stylesheet/</a>
 
-   <b>Features:</b>
+   <b>Examples how to use functions contained in the less.dss file:</b>
 
  <ul>
+   <h3>CSS Backgrounds</h3>
+   <hr/>
    <li><b>.gradient-h</b>           - CSS3 - Horizontal background gradient.</li>
    <code>.gradient-h(#fff, #aaa);</code>
 
@@ -24,7 +26,7 @@ List of all functions is on: <a href="http://mrkrupski.github.com/LESS-Dynamic-S
    <li><b>.gradient-radial</b>      - CSS3 - Radial background gradient.</li>
    <code>.gradient-radial(#fff, #aaa);</code>
 
-   <li><b>.gradient-direction</b>   - CSS3 - Directional background gradient.</li>
+   <li><b>.gradient-direction</b>   - CSS3 - Directional background gradient (type only the value - extension is added automatically).</li>
    <code>.gradient-direction(#fff, #aaa, 120);</code>
 
    <li><b>.background-clip</b>      - Crop the backgroud of an element (border-box | padding-box | content-box).</li>
@@ -34,7 +36,8 @@ List of all functions is on: <a href="http://mrkrupski.github.com/LESS-Dynamic-S
    <code>.background-size(100%, 50%);</code>
 
    <br/>
-
+   <h3>CSS3 Borders</h3>
+   <hr/>
    <li><b>.box-shadow</b>           - CSS3 - The box-shadow property attaches one or more drop-shadows to the box (always add <b>"</b> before and after values - thanks to that you can use many shadows at the same time).</li>
    <code>.box-shadow("0 0 5px blue");</code>
    <br/>
@@ -52,57 +55,65 @@ List of all functions is on: <a href="http://mrkrupski.github.com/LESS-Dynamic-S
    <code>.box-sizing(border-box);</code>
 
    <br/>
-
+   <h3>CSS3 2D Transforms</h3>
+   <hr/>
    <li><b>.translate</b>            - CSS3 - With the translate() method, the element moves from its current position (X-axis - left, Y-axis - top).</li>
    <code>.translate(20, 40);</code>
 
-   <li><b>.rotate</b>               - CSS3 - With the rotate() method, the element rotates clockwise at a given degree.</li>
+   <li><b>.rotate</b>               - CSS3 - With the rotate() method, the element rotates clockwise at a given degree (type only the value - extension is added automatically).</li>
    <code>.rotate(3);</code>
 
    <li><b>.scale</b>                - CSS3 - With the scale() method, the element increases or decreases the size.</li>
    <code>.scale(.8);</code>
 
-   <li><b>.skew</b>                 - CSS3 - With the skew() method, the element turns in a given angle (X-axis - horizontal, Y-axis - vertical).</li>
+   <li><b>.skew</b>                 - CSS3 - With the skew() method, the element turns in a given angle (X-axis - horizontal, Y-axis - vertical) (type only the value - extension is added automatically).</li>
    <code>.skew(30, 4);</code>
 
    <li><b>.matrix</b>               - CSS3 - The matrix() method combines all of the 2D transform methods into one.</li>
    <code>.matrix(0.9, 0.2, -0.5, 0.9, 0, 0);</code>
 
    <br/>
-
-   <li><b>.rotateX</b>              - CSS3 - With the rotateX() method, the element rotates around its X-axis at a given degree.</li>
+   <h3>CSS3 3D Transforms</h3>
+   <hr/>
+   <li><b>.rotateX</b>              - CSS3 - With the rotateX() method, the element rotates around its X-axis at a given degree (type only the value - extension is added automatically).</li>
    <code>.rotateX(180);</code>
 
-   <li><b>.rotateY</b>              - CSS3 - With the rotateY() method, the element rotates around its Y-axis at a given degree.</li>
+   <li><b>.rotateY</b>              - CSS3 - With the rotateY() method, the element rotates around its Y-axis at a given degree (type only the value - extension is added automatically).</li>
    <code>.rotateY(40);</code>
 
    <br/>
-
+   <h3>CSS3 Transitions</h3>
+   <hr/>
    <li><b>.transition</b>           - CSS3 - Add an effect when changing from one style to another.</li>
    <code>.transition(width, .7s);</code>
 
+   <br/>
+   <h3>CSS3 Animations</h3>
+   <hr/>
    <li><b>.animate</b>              - CSS3 - Create animations (checkout: http://daneden.me/animate/ - pack of done animations).</li>
    <code>.animate(wobble);</code>
    <br/>
    <code>.animate(fadeIn, 0, ease, 2s, 1, normal, running);</code>
 
    <br/>
-
+   <h3>CSS3 Multiple Columns</h3>
+   <hr/>
    <li><b>.columns</b>              - CSS3 - Create multiple columns for laying out text (like in newspapers).</li>
    <code>.columns(auto 2, normal, medium none black);</code>
 
    <br/>
-
+   <h3>CSS Misc</h3>
+   <hr/>
    <li><b>.clearfix</b>             - Add to any parent to clear floats within (value = none).</li>
    <code>.clearfix;</code>
 
    <li><b>.font</b>                 - Font-size, line-height and weight.</li>
    <code>.font(28, 34, bold);</code>
 
-   <li><b>.size</b>                 - Quickly set the height and width on one line (you can enter only the values).</li>
+   <li><b>.size</b>                 - Quickly set the height and width on one line (you can enter only the values) (type only the value - extension is added automatically).</li>
    <code>.size(200, 100);</code>
 
-   <li><b>.square</b>               - Use this if height and width have the same values.</li>
+   <li><b>.square</b>               - Use this if height and width have the same values (type only the value - extension is added automatically).</li>
    <code>.square(400);</code>
 
    <li><b>.opacity</b>              - Elements transparency (full = 1 not 100).</li>
