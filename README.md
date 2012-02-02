@@ -2,88 +2,110 @@ LESS DSS (dynamic stylesheet)
 =============
 
 A set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.org" target="_blank">lesscss.org</a>
-<br/>I recommend '<a href="http://incident57.com/codekit/" target="_blank">CodeKit</a>' app for best work results :) (only OS X)
+<br/>I recommend '<a href="http://incident57.com/codekit/" target="_blank">CodeKit</a>' app for auto compress (not only for less) ;) (OS X)
 
    <b>Features:</b>
 
  <ul>
-   <li><b>.gradient-h</b>            - CSS3 - horizontal gradient (works also on IE)</li>
-   <code>.gradient-h(#fff, #fbfbfb);</code>
+   <li><b>.gradient-h</b>           - CSS3 - Horizontal background gradient.</li>
+   <code>.gradient-h(#fff, #aaa);</code>
 
-   <li><b>.gradient-hline</b>         - CSS3 - horizontal linear gradient (works also on IE)</li>
-   <code>.gradient-hline(#B0BAC5, #9DA7B2, #919CA8, #7E8A98);</code>
+   <li><b>.gradient-hline</b>       - CSS3 - Horizontal-linear background gradient.</li>
+   <code>.gradient-hline(#fff, #ddd, #aaa, #ddd);</code>
 
-   <li><b>.gradient-v</b>            - CSS3 - veritical gradient (works also on IE)</li>
-   <code>.gradient-v(#fff, #fbfbfb);</code>
+   <li><b>gradient-v</b>            - CSS3 - Vertical background gradient.</li>
+   <code>.gradient-v(#fff, #aaa);</code>
 
-   <li><b>.gradient-radial</b>       - CSS3 - radial gradient (works also on IE9+)</li>
-   <code>.gradient-radial(#fff, #fbfbfb);</code>
+   <li><b>.gradient-v3colors</b>    - CSS3 - Three-color background gradient.</li>
+   <code>.gradient-v3colors(#00b3ee, #7a43b6, 50%, #c3325f);</code>
 
-   <li><b>.gradient-direction</b>    - CSS3 - gradient directional position <i>(at the end enter only the value)</i></li>
-   <code>.gradient-direction(#fff, #fbfbfb, 45);</code>
+   <li><b>.gradient-radial</b>      - CSS3 - Radial background gradient.</li>
+   <code>.gradient-radial(#fff, #aaa);</code>
 
-   <br/>
+   <li><b>.gradient-direction</b>   - CSS3 - Directional background gradient.</li>
+   <code>.gradient-direction(#fff, #aaa, 120);</code>
 
-   <li><b>.alpha-shadow</b>          - CSS3 - transparent black shadow</li>
-   <code>.alpha-shadow(0 0 4px, 0.6);</code>
+   <li><b>.background-clip</b>      - Crop the backgroud of an element (border-box | padding-box | content-box).</li>
+   <code>.background-clip(border-box);</code>
 
-   <li><b>.outer-shadow</b>          - CSS3 - outher element shadow</li>
-   <code>.outer-shadow(0px 0px 0.83em, #333);</code>
-
-   <li><b>.inner-shadow</b>          - CSS3 - shadow inside the element</li>
-   <code>.inner-shadow(0px 0px 1px, #fbfbfb);</code>
-
-   <li><b>.io-shadow</b>             - CSS3 - inner & outer shadow</li>
-   <code>.io-shadow(0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 2px rgba(0, 0, 0, 0.3));</code>
+   <li><b>.background-size</b>      - Control the size of background images via CSS3.</li>
+   <code>.background-size(100%, 50%);</code>
 
    <br/>
 
-   <li><b>.rounded</b>               - CSS3 - rounded corners</li>
-   <code>.rounded(4px);</code> or <code>.rounded(4px 2px 3px 0);</code>
+   <li><b>.box-shadow</b>           - CSS3 - The box-shadow property attaches one or more drop-shadows to the box (always add <b>"</b> before and after values - thanks to that you can use many shadows at the same time).</li>
+   <code>.box-shadow("0 0 5px blue");</code>
+   <br/>
+   <code>.box-shadow("0 0 5px blue, inset 2px 2px 10px rgba(0,0,0, .2), 0 1px 4px #000");</code>
 
-   <li><b>.rotate</b>                - CSS3 - simple elements rotate <i>(enter only the value)</i></li>
-   <code>.rotate(5);</code>
+   <li><b>.border-image</b>         - CSS3 - Define an image to be used instead of the normal border of an element.</li>
+   <code>.border-image(url(picture.img));</code>
+   <br/>
+   <code>.border-image(url(picture.img), 100%, 1, 0, stretch);</code>
 
-   <li><b>.scale</b>                 - CSS3 - the elements scaling</li>
-   <code>.scale(1.5);</code>
+   <li><b>.rounded</b>              - CSS3 - Round the corners of an element. Can be a single value or four space-separated values.</li>
+   <code>.rounded(10px);</code>
 
-   <li><b>.skew</b>                  - CSS3 - the elements turns in a given angle <i>(enter only the values)</i></li>
-   <code>.skew(20, 40);</code>
-
-   <li><b>.translate</b>             - CSS3 - transform elements <i>(works also on IE9+)</i></li>
-   <code>.translate(10, 0);</code>
-
-   <li><b>.transition</b>            - CSS3 - transition effects <i>(property, duration, timing, delay)</i></li>
-   <code>.transition(all, 0.2s, ease-out, 1s);</code>
-
-   <li><b>.animation</b>             - CSS3 - simple add animation <i>(required: <http://daneden.me/animate/> but you also can create your own animation)</i></li>
-   <code>.animation(fadeOut);</code> or <code>.animation(fadeIn, 0, ease, 2s, 1, normal, running);</code>
+   <li><b>.box-sizing</b>           - Change the box model for an element (e.g., border-box for a full-width input).</li>
+   <code>.box-sizing(border-box);</code>
 
    <br/>
 
-   <li><b>.columns</b>               - CSS3 - text management <i>(width, count, gap, rule)</i></li>
-   <code>.columns(250, 0, 50, 1px solid #EEE);</code>
+   <li><b>.translate</b>            - CSS3 - With the translate() method, the element moves from its current position (X-axis - left, Y-axis - top).</li>
+   <code>.translate(20, 40);</code>
+
+   <li><b>.rotate</b>               - CSS3 - With the rotate() method, the element rotates clockwise at a given degree.</li>
+   <code>.rotate(3);</code>
+
+   <li><b>.scale</b>                - CSS3 - With the scale() method, the element increases or decreases the size.</li>
+   <code>.scale(.8);</code>
+
+   <li><b>.skew</b>                 - CSS3 - With the skew() method, the element turns in a given angle (X-axis - horizontal, Y-axis - vertical).</li>
+   <code>.skew(30, 4);</code>
+
+   <li><b>.matrix</b>               - CSS3 - The matrix() method combines all of the 2D transform methods into one.</li>
+   <code>.matrix(0.9, 0.2, -0.5, 0.9, 0, 0);</code>
 
    <br/>
 
-   <li><b>.box-sizing</b>            - box-model fixes</li>
-   <code>.box-sizing();</code>
+   <li><b>.rotateX</b>              - CSS3 - With the rotateX() method, the element rotates around its X-axis at a given degree.</li>
+   <code>.rotateX(180);</code>
 
-   <li><b>.clearfix</b>              - clearing floats</li>
+   <li><b>.rotateY</b>              - CSS3 - With the rotateY() method, the element rotates around its Y-axis at a given degree.</li>
+   <code>.rotateY(40);</code>
+
+   <br/>
+
+   <li><b>.transition</b>           - CSS3 - Add an effect when changing from one style to another.</li>
+   <code>.transition(width, .7s);</code>
+
+   <li><b>.animate</b>              - CSS3 - Create animations (checkout: http://daneden.me/animate/ - pack of done animations).</li>
+   <code>.animate(wobble);</code>
+   <br/>
+   <code>.animate(fadeIn, 0, ease, 2s, 1, normal, running);</code>
+
+   <br/>
+
+   <li><b>.columns</b>              - CSS3 - Create multiple columns for laying out text (like in newspapers).</li>
+   <code>.columns(auto 2, normal, medium none black);</code>
+
+   <br/>
+
+   <li><b>.clearfix</b>             - Add to any parent to clear floats within (value = none).</li>
    <code>.clearfix;</code>
 
-   <li><b>.font</b>                  - font-size, line-height and weight <i>(enter only the values (​​in 'px') - if you use 'ems'  open the dss.less file and delete a comment hash from values (in font option))</i></li>
-   <code>.font(16, 20, bold);</code>
+   <li><b>.font</b>                 - Font-size, line-height and weight.</li>
+   <code>.font(28, 34, bold);</code>
 
-   <li><b>.size</b>                  - CSS3 - simple determination 'width & height' of elements <i>(enter only the values. 'px' will be added automatically)</i></li>
-   <code>.size(40, 50);</code>
+   <li><b>.size</b>                 - Quickly set the height and width on one line (you can enter only the values).</li>
+   <code>.size(200, 100);</code>
 
-   <li><b>.opacity</b>               - element transparency</li>
-   <code>.opacity(0.5);</code>
+   <li><b>.square</b>               - Use this if height and width have the same values.</li>
+   <code>.square(400);</code>
 
-   <li><b>.bordered</b>              - custom borders: color and weight</li> 
-   <code>.bordered(#EEE, #CCC, #999, #333, 1px);</code>
+   <li><b>.opacity</b>              - Elements transparency (full = 1 not 100).</li>
+   <code>.opacity(.5);</code>
 
-   <li><b>.less-button</b>               - quickly create your own buttons <i>(background-color, border-color, text color, text-shadow, font-weight, padding, rounded corners)</i></li>
-   <code>.less-button(#ccc, #999, #444, 0 1px 0 rgba(255,255,255,0.40), normal, 6px 18px, 4px)</code>
- </ul>
+   <li><b>.less-button</b>          - Quickly create a customize button <i>(background-color, border-color, text color, text-shadow, font-weight, padding, rounded corners)</i>.</li>
+   <code>.less-button(#ccc, #999, #444, 0 1px 0 rgba(255,255,255,0.40), normal, 6px 18px, 4px);</code>
+</ul>

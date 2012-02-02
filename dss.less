@@ -1,136 +1,200 @@
-/* =========================================
-   LESS DSS (dynamic stylesheet) 1.4.4
-   =========================================
+/*
+=========================================
+ LESS DSS (dynamic stylesheet) 1.5
+=========================================
 
-   LESS mixins by Chris Krupski
+ LESS mixins by Chris Krupski
 
-   =========================================
+=========================================
 
-   Features:
+ Features:
 
-   .gradient-h          - CSS3 - horizontal gradient (works also on IE)
-   .gradient-hline      - CSS3 - horizontal linear gradient (works also on IE)
-   .gradient-v          - CSS3 - veritical gradient (works also on IE)
-   .gradient-radial     - CSS3 - radial gradient (works also on IE9+)
-   .gradient-direction  - CSS3 - gradient directional position (at the end enter only the value)
+  == CSS Backgrounds ==
 
-   .alpha-shadow        - CSS3 - transparent black shadow
-   .outer-shadow        - CSS3 - outher element shadow
-   .inner-shadow        - CSS3 - shadow inside the element
-   .io-shadow           - CSS3 - inner & outer shadow
+ .gradient-h          - CSS3 - Horizontal background gradient.
+ .gradient-hline      - CSS3 - Horizontal-linear background gradient.
+ .gradient-v          - CSS3 - Vertical background gradient.
+ .gradient-v3colors   - CSS3 - Three-color background gradient.
+ .gradient-radial     - CSS3 - Radial background gradient.
+ .gradient-direction  - CSS3 - Directional background gradient.
 
-   .rounded             - CSS3 - rounded corners
-   .rotate              - CSS3 - simple elements rotate (enter only the values)
-   .scale               - CSS3 - the elements scaling
-   .skew                - CSS3 - the elements turns in a given angle (enter only the values)
-   .translate           - CSS3 - transform elements (works also on IE9+)
-   .transition          - CSS3 - transition effects
-   .animate             - CSS3 - simple add animation (checkout: http://daneden.me/animate/)
+ .background-clip     - Crop the backgroud of an element.
+ .background-size     - Control the size of background images via CSS3.
 
-   .columns             - CSS3 - text management
 
-   .box-sizing          - box-model fixes
-   .clearfix            - clearing floats (you can change content value: ".")
-   .font                - font-size, line-height and weight
-   .size                - simple determination 'width & height' of elements (enter only the values)
-   .opacity             - element transparency
-   .bordered            - custom borders colors & weight
-   .less-button         - quickly create your own buttons
+  == CSS3 Borders ==
 
-   ========================================= */
+ .box-shadow          - CSS3 - The box-shadow property attaches one or more drop-shadows to the box (always add <b>"</b> before and after values - thanks to that you can use many shadows at the same time).
+ .border-image        - CSS3 - Define an image to be used instead of the normal border of an element.
+ .rounded             - CSS3 - Round the corners of an element. Can be a single value or four space-separated values.
+
+ .box-sizing          - Change the box model for an element (e.g., border-box for a full-width input).
+
+
+  == CSS3 2D Transforms ==
+
+ .translate           - CSS3 - With the translate() method, the element moves from its current position (X-axis - left, Y-axis - top).
+ .rotate              - CSS3 - With the rotate() method, the element rotates clockwise at a given degree.
+ .scale               - CSS3 - With the scale() method, the element increases or decreases the size.
+ .skew                - CSS3 - With the skew() method, the element turns in a given angle (X-axis - horizontal, Y-axis - vertical).
+ .matrix              - CSS3 - The matrix() method combines all of the 2D transform methods into one.
+
+
+  == CSS3 3D Transforms ==
+
+  .rotateX            - CSS3 - With the rotateX() method, the element rotates around its X-axis at a given degree.
+  .rotateY            - CSS3 - With the rotateY() method, the element rotates around its Y-axis at a given degree.
+
+
+  == CSS3 Transitions ==
+
+ .transition          - CSS3 - Add an effect when changing from one style to another.
+
+
+  == CSS3 Animations ==
+
+ .animate             - CSS3 - Create animations (checkout: http://daneden.me/animate/ - pack of done animations).
+
+
+  == CSS3 Multiple Columns ==
+
+ .columns             - CSS3 - Create multiple columns for laying out text (like in newspapers).
+
+
+  == CSS Misc ==
+
+ .clearfix            - Add to any parent to clear floats within.
+ .font                - Font-size, line-height and weight.
+ .size                - Quickly set the height and width on one line (you can enter only the values).
+ .square              - Use this if height and width have the same values.
+ .opacity             - Elements transparency (full = 1 not 100).
+ .less-button         - Quickly create a customize button.
+
+========================================= */
+
+
+/* CSS Backgrounds
+========================== */
 
 .gradient-h (@startColor: #EEE, @endColor: #FFF) {
-  background: @endColor;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor),to(@endColor));
+  background-color: @endColor;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
   background-image: -webkit-linear-gradient(top, @startColor, @endColor);
   background-image: -moz-linear-gradient(top, @startColor, @endColor);
   background-image: -o-linear-gradient(top, @startColor, @endColor);
-  background-image: -ms-linear-gradient(top, @startColor, @endColor);
+  //background-image: -ms-linear-gradient(top, @startColor, @endColor); /* IE 10+ */
   background-image: linear-gradient(top, @startColor, @endColor);
-  filter: e(%("progid: DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=0)", @startColor, @endColor));
+  background-repeat: repeat-x;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
 }
 
-.gradient-hline (@startColor: #B0BAC5, @middleColor1: #9DA7B2, @middleColor2: #919CA8, @endColor: #7E8A98) {
+.gradient-hline (@startColor: #B0BAC5, @midColor1: #9DA7B2, @midColor2: #919CA8, @endColor: #7E8A98) {
   background: @endColor;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(50%, @middleColor1), color-stop(51%, @middleColor2), color-stop(100%, @endColor));
-  background-image: -webkit-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-  background-image: -moz-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-  background-image: -o-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-  background-image: -ms-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-  background-image: linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-  filter: e(%("progid: DXImageTransform.Microsoft.gradient(startColor='%d', startColorStr='%d', EndColorStr='%d', EndColor='%d', GradientType=0)", @startColor, @middleColor1, @middleColor2, @endColor));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(50%, @midColor1), color-stop(51%, @midColor2), color-stop(100%, @endColor));
+  background-image: -webkit-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
+  background-image: -moz-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
+  background-image: -o-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
+  //background-image: -ms-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%); /* IE 10+ */
+  background-image: linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
 }
 
 .gradient-v (@startColor: #EEE, @endColor: #FFF) {
-  background: @endColor;
-  background-image: -webkit-gradient(linear, left center, right center, from(@startColor),to(@endColor));
+  background-color: mix(@startColor, @endColor, 60%);
+  background-image: -webkit-gradient(linear, left center, right center, from(@startColor), to(@endColor));
   background-image: -webkit-linear-gradient(left, @startColor, @endColor);
   background-image: -moz-linear-gradient(left, @startColor, @endColor);
   background-image: -o-linear-gradient(left, @startColor, @endColor);
-  background-image: -ms-linear-gradient(left, @startColor, @endColor);
+  //background-image: -ms-linear-gradient(left, @startColor, @endColor); /* IE 10+ */
   background-image: linear-gradient(left, @startColor, @endColor);
-  filter: e(%("progid: DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=1)", @startColor, @endColor));
+  background-repeat: repeat-x;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
 }
 
-.gradient-radial (@startColor: #EEE, @endColor: #FFF) {
-  background-color: @endColor;
-  background-image: -webkit-gradient(radial, 50% 50%,200,50% 50%,20, from(@startColor),to(@endColor));
-  background-image: -webkit-radial-gradient(50% 50%, @startColor, @endColor);
-  background-image: -moz-radial-gradient(50% 50%, @startColor, @endColor);
-  background-image: -ms-radial-gradient(50% 50%, @startColor, @endColor);
-  background-image: radial-gradient(50% 50%, @startColor, @endColor);
+.gradient-v3colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
+  background-color: mix(@midColor, @endColor, 80%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));
+  background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+  background-image: -moz-linear-gradient(top, @startColor, @midColor @colorStop, @endColor);
+  //background-image: -ms-linear-gradient(@startColor, @midColor @colorStop, @endColor); /* IE 10+ */
+  background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+  background-image: linear-gradient(@startColor, @midColor @colorStop, @endColor);
+  background-repeat: no-repeat;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='%d', endColorstr='%d')", @startColor, @endColor));
+}
+
+.gradient-radial (@innerColor: #EEE, @outerColor: #FFF) {
+  background-color: @outerColor;
+  background-image: -webkit-gradient(radial, 50% 50%, 200, 50% 50%, 20, from(@outerColor), to(@innerColor));
+  background-image: -webkit-radial-gradient(50% 50%, @innerColor, @outerColor);
+  background-image: -moz-radial-gradient(50% 50%, @innerColor, @outerColor);
+  background-image: -o-radial-gradient(50% 50%, @innerColor, @outerColor);
+  //background-image: -ms-radial-gradient(50% 50%, @innerColor, @outerColor); /* IE 10+ */
+  background-image: radial-gradient(50% 50%, @innerColor, @outerColor);
+  background-repeat: no-repeat;
 }
 
 .gradient-direction (@startColor: #555, @endColor: #333, @value: 45) {
-  background: @startColor;
-  background-image: -webkit-gradient(linear, @value * 1deg, from(@startColor),to(@endColor));
+  background: @endColor;
+  background-image: -webkit-gradient(linear, @value * 1deg, from(@startColor), to(@endColor));
   background-image: -webkit-linear-gradient(@value * 1deg, @startColor, @endColor);
   background-image: -moz-linear-gradient(@value * 1deg, @startColor, @endColor);
   background-image: -o-linear-gradient(@value * 1deg, @startColor, @endColor);
-  background-image: -ms-linear-gradient(@value * 1deg, @startColor, @endColor);
+  //background-image: -ms-linear-gradient(@value * 1deg, @startColor, @endColor); /* IE 10+ */
   background-image: linear-gradient(@value * 1deg, @startColor, @endColor);
 }
 
-.alpha-shadow (@xy_blur_spread: 0px 0px 0.83em, @alpha: 0.4) {
-  -webkit-box-shadow: @xy_blur_spread rgba(0, 0, 0, @alpha);
-     -moz-box-shadow: @xy_blur_spread rgba(0, 0, 0, @alpha);
-       -o-box-shadow: @xy_blur_spread rgba(0, 0, 0, @alpha);
-          box-shadow: @xy_blur_spread rgba(0, 0, 0, @alpha);
+.background-clip (@value: border-box) { /* border-box | padding-box | content-box */
+  -webkit-background-clip: @value;
+     -moz-background-clip: @value;
+          background-clip: @value;
 }
 
-.outer-shadow (@xy_blur_spread: 0px 0px 0.83em 0, @color: #222) {
-  -webkit-box-shadow: @xy_blur_spread @color;
-     -moz-box-shadow: @xy_blur_spread @color;
-       -o-box-shadow: @xy_blur_spread @color;
-          box-shadow: @xy_blur_spread @color;
+.background-size(@value){
+  -webkit-background-size: @value;
+     -moz-background-size: @value;
+       -o-background-size: @value;
+          background-size: @value;
 }
 
-.inner-shadow (@xy_blur_spread: 0px 0px 0.83em 0, @color: #222) {
-  -webkit-box-shadow: @xy_blur_spread @color inset;
-     -moz-box-shadow: @xy_blur_spread @color inset;
-       -o-box-shadow: @xy_blur_spread @color inset;
-          box-shadow: @xy_blur_spread @color inset;
+
+/* CSS3 Borders
+========================== */
+
+.box-shadow (@values: 1px 1px 2px rgba(0, 0, 0, .5)) {
+  -webkit-box-shadow: e(@values);
+     -moz-box-shadow: e(@values);
+          box-shadow: e(@values);
 }
 
-.io-shadow (@xy_blur_spread_outer: 0px 1px 2px rgba(0, 0, 0, 0.3) 0, @xy_blur_spread_inner: 0px 1px 0px rgba(255, 255, 255, 0.4)) {
-  -webkit-box-shadow: @xy_blur_spread_outer, @xy_blur_spread_inner inset;
-     -moz-box-shadow: @xy_blur_spread_outer, @xy_blur_spread_inner inset;
-       -o-box-shadow: @xy_blur_spread_outer, @xy_blur_spread_inner inset;
-          box-shadow: @xy_blur_spread_outer, @xy_blur_spread_inner inset;
+.border-image (@source: none, @slice: 100%, @width: 1, @outset: 0, @repeat: stretch) { /* repeat: stretch | repeat | round */
+  -webkit-border-image: @source, @slice, @width, @outset, @repeat;
+     -moz-border-image: @source, @slice, @width, @outset, @repeat;
+       -o-border-image: @source, @slice, @width, @outset, @repeat;
+          border-image: @source, @slice, @width, @outset, @repeat;
 }
 
-.rounded (@radius: 2px/*, @bg_clip: padding-box*/) {
+.rounded (@radius: 2px) {
   -webkit-border-radius: @radius;
-   -khtml-border-radius: @radius;
      -moz-border-radius: @radius;
-      -ms-border-radius: @radius;
-       -o-border-radius: @radius;
           border-radius: @radius;
+}
 
-/*
--webkit-background-clip: @bg_clip;
-        background-clip: @bg_clip;
-*/
+.box-sizing (@type: border-box) {
+  -webkit-box-sizing: @type;
+     -moz-box-sizing: @type;
+          box-sizing: @type;
+}
+
+
+/* CSS3 2D Transforms
+========================== */
+
+.translate (@x:0, @y:0) {
+  -webkit-transform: translate(@x * 1px, @y * 1px);
+     -moz-transform: translate(@x * 1px, @y * 1px);
+      -ms-transform: translate(@x * 1px, @y * 1px);
+       -o-transform: translate(@x * 1px, @y * 1px);
+          transform: translate(@x * 1px, @y * 1px);
 }
 
 .rotate (@value: 5){
@@ -149,70 +213,92 @@
           transform: scale(@ratio);
 }
 
-.skew (@value: 20deg, @value2: 20deg) {
--webkit-transition: skew(@value * 1deg, @value2 * 1deg);
-   -moz-transition: skew(@value * 1deg, @value2 * 1deg);
-    -ms-transition: skew(@value * 1deg, @value2 * 1deg);
-     -o-transition: skew(@value * 1deg, @value2 * 1deg);
-        transition: skew(@value * 1deg, @value2 * 1deg);
+.skew (@value: 20, @value2: 20) {
+-webkit-transform: skew(@value * 1deg, @value2 * 1deg);
+   -moz-transform: skew(@value * 1deg, @value2 * 1deg);
+    -ms-transform: skew(@value * 1deg, @value2 * 1deg);
+     -o-transform: skew(@value * 1deg, @value2 * 1deg);
+        transform: skew(@value * 1deg, @value2 * 1deg);
 }
 
-.translate (@x:0, @y:0) {
-  -webkit-transform: translate(@x, @y);
-     -moz-transform: translate(@x, @y);
-      -ms-transform: translate(@x, @y);
-       -o-transform: translate(@x, @y);
-          transform: translate(@x, @y);
+.matrix (@rotate: 0.866, @scale: 0.5, @translate: -0.5, @skew: 0.866, @x: 0, @y: 0) {
+  -webkit-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+     -moz-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+      -ms-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+       -o-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+          transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
 }
+
+
+/* CSS3 3D Transforms
+========================== */
+
+.rotateX (@value: 120) {
+  -webkit-transform: e(%('rotateX(%d)', @value * 1deg));
+          transform: e(%('rotateX(%d)', @value * 1deg));
+}
+
+.rotateY (@value: 10) {
+  -webkit-transform: e(%('rotateY(%d)', @value * 1deg));
+          transform: e(%('rotateY(%d)', @value * 1deg));
+}
+
+
+/* CSS3 Transitions
+========================== */
 
 .transition (@property: property, @duration: 0.2s, @timing: ease-out, @delay: 0) {
   -webkit-transition: @property @duration @timing @delay;
-     -moz-transition: @property @duration @timing @delay;
+     -moz-transition: @property @duration @timing; /* @delay value doesn't work on Firefox */
        -o-transition: @property @duration @timing @delay;
           transition: @property @duration @timing @delay;
 }
 
+
+/* CSS3 Animations
+========================== */
+
 .animate (@name: none, @duration: 2s, @timing: ease, @delay: 0, @iteration-count: 1, @direction: normal, @state: running) {
   -webkit-animation: @name @duration @timing @delay @iteration-count @direction;
-     -moz-animation: @name @duration @timing @delay @iteration-count @direction;
-      -ms-animation: @name @duration @timing @delay @iteration-count @direction;
-       -o-animation: @name @duration @timing @delay @iteration-count @direction;
+     -moz-animation: @name @duration @timing @iteration-count @direction; /* @delay value doesn't work on Firefox */
+      //-ms-animation: @name @duration @timing @delay @iteration-count @direction; /* IE 10+ */
           animation: @name @duration @timing @delay @iteration-count @direction;
-  
-  animation-play-state: @state;
+
+  -webkit-animation-play-state: @state;
+     -moz-animation-play-state: @state;
+          animation-play-state: @state;
 }
 
-.columns (@columnWidth: 250px, @columnCount: 0, @columnGap: 50px, @columnRule: 1px solid #EEE) {
-  -moz-column-width: @columnWidth;
-  -moz-column-count: @columnCount;
-  -moz-column-gap: @columnGap;
-  -moz-column-rule: @columnRule;
-  
-  -webkit-column-width: @columnWidth;
-  -webkit-column-count: @columnCount;
+
+/* CSS3 Multiple Columns
+========================== */
+
+.columns (@columnWidth: auto auto, @columnGap: normal, @columnRule: medium none black) {
+  -webkit-columns: @columnWidth;
   -webkit-column-gap: @columnGap;
   -webkit-column-rule: @columnRule;
 
-  column-width: @columnWidth;
-  column-count: @columnCount;
+  -moz-columns: @columnWidth;
+  -moz-column-gap: @columnGap;
+  -moz-column-rule: @columnRule;
+
+  columns: @columnWidth;
   column-gap: @columnGap;
   column-rule: @columnRule;
 }
 
-.box-sizing (@type: border-box) {
-  -webkit-box-sizing: @type;
-     -moz-box-sizing: @type;
-          box-sizing: @type;
-}
 
-.clearfix (@content: ".") {
-  zoom: 1;
+/* CSS Misc
+========================== */
+
+.clearfix () {
+  *zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
   &:after {
-    content: @content;
-    display: block;
-    height: 0;
     clear: both;
-    visibility: hidden;
   }
 }
 
@@ -222,43 +308,40 @@
   font-weight: @weight;
 }
 
-.size (@width: 20, @height: 20) {
+.size (@height: 20, @width: 20) {
   width: @width * 1px;
   height: @height * 1px;
+}
+
+.square (@value: 100) {
+  .size(@value, @value);
 }
 
 .opacity (@opacity: 0.5) {
   zoom: 1;
   opacity: @opacity;
-  filter: ~"alpha(opacity=@opacity*100)";
+  filter: e(%("alpha(opacity=%d)", @opacity*100));
 }
 
-.bordered (@thickness: 1px, @top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE, @style: solid) {
-  border-top: @style @thickness @top-color;
-  border-left: @style @thickness @left-color;
-  border-right: @style @thickness @right-color;
-  border-bottom: @style @thickness @bottom-color;
-}
-
-.less-button (@color: #ddd, @border: #999, @text_color: #444, @text_shadow: 0 1px 0 rgba(255,255,255,0.40), @padding: 6px 12px, @corners: 2px) { 
-  .gradient-h(@color, darken(@color, 15%));
-  .io-shadow(0 1px 0 rgba(255,255,255,0.40), 0 1px 0 rgba(255,255,255,0.40));
+.less-button (@bg-color: #ddd, @border-color: #999, @text-color: #444, @text-shadow: 0 1px 0 rgba(255,255,255,0.40), @padding: 6px 12px, @corners: 2px) { 
+  .gradient-h(@bg-color, darken(@bg-color, 15%));
+  .box-shadow("0 1px 0 rgba(255,255,255,0.40), inset 0 1px 0 rgba(255,255,255,0.40)");
   .rounded(@corners);
-  color: @text_color;
-  text-shadow: @text_shadow;
-  border: 1px solid @border;
+  color: @text-color;
+  text-shadow: @text-shadow;
+  border: 1px solid @border-color;
   padding: @padding;
   display: inline-block;
   cursor: pointer;
 
   &:hover {
-    .gradient-h(darken(@color, 18%), @color);
-    .io-shadow(0 1px 0 rgba(255,255,255,.40), 0 2px 1px rgba(0,0,0,.10));
-    color: @text_color;
+    .gradient-h(darken(@bg-color, 18%), @bg-color);
+    .box-shadow("0 1px 0 rgba(255,255,255,.40), inset 0 2px 1px rgba(0,0,0,.10)");
+    color: @text-color;
     text-decoration: none;
   }
   
   &:active { 
-    background: @color;
+    background: @bg-color;
   }
 }
