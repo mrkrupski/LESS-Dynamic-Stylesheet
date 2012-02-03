@@ -96,14 +96,14 @@
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
 }
 
-.gradient-hline (@startColor: #B0BAC5, @midColor1: #9DA7B2, @midColor2: #919CA8, @endColor: #7E8A98) {
+.gradient-hline (@startColor: #B0BAC5, @middleColor1: #9DA7B2, @middleColor2: #919CA8, @endColor: #7E8A98) {
   background: @endColor;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(50%, @midColor1), color-stop(51%, @midColor2), color-stop(100%, @endColor));
-  background-image: -webkit-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
-  background-image: -moz-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
-  background-image: -o-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
-  background-image: -ms-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%); /* IE 10+ */
-  background-image: linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(50%, @middleColor1), color-stop(51%, @middleColor2), color-stop(100%, @endColor));
+  background-image: -webkit-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
+  background-image: -moz-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
+  background-image: -o-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
+  background-image: -ms-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%); /* IE 10+ */
+  background-image: linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
 }
 
 .gradient-v (@startColor: #EEE, @endColor: #FFF) {
@@ -118,14 +118,14 @@
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
 }
 
-.gradient-v3colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
-  background-color: mix(@midColor, @endColor, 80%);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));
-  background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);
-  background-image: -moz-linear-gradient(top, @startColor, @midColor @colorStop, @endColor);
-  background-image: -ms-linear-gradient(@startColor, @midColor @colorStop, @endColor); /* IE 10+ */
-  background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @endColor);
-  background-image: linear-gradient(@startColor, @midColor @colorStop, @endColor);
+.gradient-v3colors(@startColor: #00b3ee, @middleColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
+  background-color: mix(@middleColor, @endColor, 80%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @middleColor), to(@endColor));
+  background-image: -webkit-linear-gradient(@startColor, @middleColor @colorStop, @endColor);
+  background-image: -moz-linear-gradient(top, @startColor, @middleColor @colorStop, @endColor);
+  background-image: -ms-linear-gradient(@startColor, @middleColor @colorStop, @endColor); /* IE 10+ */
+  background-image: -o-linear-gradient(@startColor, @middleColor @colorStop, @endColor);
+  background-image: linear-gradient(@startColor, @middleColor @colorStop, @endColor);
   background-repeat: no-repeat;
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='%d', endColorstr='%d')", @startColor, @endColor));
 }
@@ -141,20 +141,20 @@
   background-repeat: no-repeat;
 }
 
-.gradient-direction (@startColor: #555, @endColor: #333, @value: 45) {
+.gradient-direction (@startColor: #555, @endColor: #333, @degrees: 45) {
   background: @endColor;
-  background-image: -webkit-gradient(linear, @value * 1deg, from(@startColor), to(@endColor));
-  background-image: -webkit-linear-gradient(@value * 1deg, @startColor, @endColor);
-  background-image: -moz-linear-gradient(@value * 1deg, @startColor, @endColor);
-  background-image: -o-linear-gradient(@value * 1deg, @startColor, @endColor);
-  background-image: -ms-linear-gradient(@value * 1deg, @startColor, @endColor); /* IE 10+ */
-  background-image: linear-gradient(@value * 1deg, @startColor, @endColor);
+  background-image: -webkit-gradient(linear, @degrees * 1deg, from(@startColor), to(@endColor));
+  background-image: -webkit-linear-gradient(@degrees * 1deg, @startColor, @endColor);
+  background-image: -moz-linear-gradient(@degrees * 1deg, @startColor, @endColor);
+  background-image: -o-linear-gradient(@degrees * 1deg, @startColor, @endColor);
+  background-image: -ms-linear-gradient(@degrees * 1deg, @startColor, @endColor); /* IE 10+ */
+  background-image: linear-gradient(@degrees * 1deg, @startColor, @endColor);
 }
 
-.background-clip (@value: border-box) { /* border-box | padding-box | content-box */
-  -webkit-background-clip: @value;
-     //-moz-background-clip: @value;
-          background-clip: @value;
+.background-clip (@type: border-box) { /* border-box | padding-box | content-box */
+  -webkit-background-clip: @type;
+     //-moz-background-clip: @type;
+          background-clip: @type;
 }
 
 .background-size(@value){
@@ -210,12 +210,12 @@
           transform: translate(@x * 1px, @y * 1px);
 }
 
-.rotate (@value: 5){
-  -webkit-transform: rotate(@value * 1deg);
-     -moz-transform: rotate(@value * 1deg);
-      -ms-transform: rotate(@value * 1deg);
-       -o-transform: rotate(@value * 1deg);
-          transform: rotate(@value * 1deg);
+.rotate (@degrees: 5){
+  -webkit-transform: rotate(@degrees * 1deg);
+     -moz-transform: rotate(@degrees * 1deg);
+      -ms-transform: rotate(@degrees * 1deg);
+       -o-transform: rotate(@degrees * 1deg);
+          transform: rotate(@degrees * 1deg);
 }
 
 .scale (@ratio: 1.5){
@@ -226,12 +226,12 @@
           transform: scale(@ratio);
 }
 
-.skew (@value: 20, @value2: 20) {
--webkit-transform: skew(@value * 1deg, @value2 * 1deg);
-   -moz-transform: skew(@value * 1deg, @value2 * 1deg);
-    -ms-transform: skew(@value * 1deg, @value2 * 1deg);
-     -o-transform: skew(@value * 1deg, @value2 * 1deg);
-        transform: skew(@value * 1deg, @value2 * 1deg);
+.skew (@degrees1: 20, @degrees2: 20) {
+-webkit-transform: skew(@degrees1 * 1deg, @degrees2 * 1deg);
+   -moz-transform: skew(@degrees1 * 1deg, @degrees2 * 1deg);
+    -ms-transform: skew(@degrees1 * 1deg, @degrees2 * 1deg);
+     -o-transform: skew(@degrees1 * 1deg, @degrees2 * 1deg);
+        transform: skew(@degrees1 * 1deg, @degrees2 * 1deg);
 }
 
 .matrix (@rotate: 0.866, @scale: 0.5, @translate: -0.5, @skew: 0.866, @x: 0, @y: 0) {
@@ -246,18 +246,18 @@
 /* CSS3 3D Transforms
 ========================== */
 
-.rotateX (@value: 120) {
-  -webkit-transform: e(%('rotateX(%d)', @value * 1deg));
-     -moz-transform: e(%('rotateX(%d)', @value * 1deg));
-      -ms-transform: e(%('rotateX(%d)', @value * 1deg));
-          transform: e(%('rotateX(%d)', @value * 1deg));
+.rotateX (@degrees: 120) {
+  -webkit-transform: e(%('rotateX(%d)', @degrees * 1deg));
+     -moz-transform: e(%('rotateX(%d)', @degrees * 1deg));
+      -ms-transform: e(%('rotateX(%d)', @degrees * 1deg));
+          transform: e(%('rotateX(%d)', @degrees * 1deg));
 }
 
-.rotateY (@value: 10) {
-  -webkit-transform: e(%('rotateY(%d)', @value * 1deg));
-     -moz-transform: e(%('rotateY(%d)', @value * 1deg));
-      -ms-transform: e(%('rotateY(%d)', @value * 1deg));
-          transform: e(%('rotateY(%d)', @value * 1deg));
+.rotateY (@degrees: 10) {
+  -webkit-transform: e(%('rotateY(%d)', @degrees * 1deg));
+     -moz-transform: e(%('rotateY(%d)', @degrees * 1deg));
+      -ms-transform: e(%('rotateY(%d)', @degrees * 1deg));
+          transform: e(%('rotateY(%d)', @degrees * 1deg));
 }
 
 .translate3d (@x, @y: 0, @z: 0) {
@@ -326,20 +326,20 @@
 /* CSS3 Multiple Columns
 ========================== */
 
-.columns (@columnWidth: auto auto, @columnGap: normal, @columnRule: medium none black) {
-  -webkit-columns: @columnWidth;
+.columns (@columnWidth-Count: auto auto, @columnGap: normal, @columnRule: medium none black) {
+  -webkit-columns: @columnWidth-Count;
   -webkit-column-gap: @columnGap;
   -webkit-column-rule: @columnRule;
 
-  -moz-columns: @columnWidth;
+  -moz-columns: @columnWidth-Count;
   -moz-column-gap: @columnGap;
   -moz-column-rule: @columnRule;
 
-  -ms-column-width: @columnWidth;
+  -ms-column-width: @columnWidth-Count;
   -ms-column-gap: @columnGap;
   -ms-column-rule: @columnRule;
 
-  columns: @columnWidth;
+  columns: @columnWidth-Count;
   column-gap: @columnGap;
   column-rule: @columnRule;
 }
@@ -359,9 +359,9 @@
   }
 }
 
-.font (@size: 40, @lineheight: 20, @weight: normal) {
+.font (@size: 40, @line-height: 20, @weight: normal) {
   font-size: @size * 1px /* / 16 * 1em*/;
-  line-height: @lineheight * 1px /* / 16 * 1em*/;
+  line-height: @line-height * 1px /* / 16 * 1em*/;
   font-weight: @weight;
 }
 
