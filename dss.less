@@ -29,7 +29,7 @@
  .rounded             - CSS3 - Round the corners of an element. Can be a single value or four space-separated values.
 
  .box-sizing          - Change the box model for an element (e.g., border-box for a full-width input).
-
+ .tab-size            - CSS3 - The tab-size CSS property is used to customize the width of a tab character.
 
   == CSS3 2D Transforms ==
 
@@ -44,6 +44,14 @@
 
   .rotateX            - CSS3 - With the rotateX() method, the element rotates around its X-axis at a given degree.
   .rotateY            - CSS3 - With the rotateY() method, the element rotates around its Y-axis at a given degree.
+  .translate3d        - CSS3 - The same that the 'translate' option but we have at our disposal 3 values (X-axis, Y-axis, Z-axis).
+  .perspective        - CSS3 - Defines a perspective view for a 3D transformed element.
+
+
+  == CSS3 2D & 3D Transforms ==
+  
+  .transform-origin   - CSS3 - The transform-origin property allows you to change the position on transformed elements.
+  .transform-style    - CSS3 - The transform-style property specifies how nested elements are rendered in 3D space.
 
 
   == CSS3 Transitions ==
@@ -82,7 +90,7 @@
   background-image: -webkit-linear-gradient(top, @startColor, @endColor);
   background-image: -moz-linear-gradient(top, @startColor, @endColor);
   background-image: -o-linear-gradient(top, @startColor, @endColor);
-  //background-image: -ms-linear-gradient(top, @startColor, @endColor); /* IE 10+ */
+  background-image: -ms-linear-gradient(top, @startColor, @endColor); /* IE 10+ */
   background-image: linear-gradient(top, @startColor, @endColor);
   background-repeat: repeat-x;
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
@@ -94,7 +102,7 @@
   background-image: -webkit-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
   background-image: -moz-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
   background-image: -o-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
-  //background-image: -ms-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%); /* IE 10+ */
+  background-image: -ms-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%); /* IE 10+ */
   background-image: linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
 }
 
@@ -104,7 +112,7 @@
   background-image: -webkit-linear-gradient(left, @startColor, @endColor);
   background-image: -moz-linear-gradient(left, @startColor, @endColor);
   background-image: -o-linear-gradient(left, @startColor, @endColor);
-  //background-image: -ms-linear-gradient(left, @startColor, @endColor); /* IE 10+ */
+  background-image: -ms-linear-gradient(left, @startColor, @endColor); /* IE 10+ */
   background-image: linear-gradient(left, @startColor, @endColor);
   background-repeat: repeat-x;
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
@@ -115,7 +123,7 @@
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));
   background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);
   background-image: -moz-linear-gradient(top, @startColor, @midColor @colorStop, @endColor);
-  //background-image: -ms-linear-gradient(@startColor, @midColor @colorStop, @endColor); /* IE 10+ */
+  background-image: -ms-linear-gradient(@startColor, @midColor @colorStop, @endColor); /* IE 10+ */
   background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @endColor);
   background-image: linear-gradient(@startColor, @midColor @colorStop, @endColor);
   background-repeat: no-repeat;
@@ -128,7 +136,7 @@
   background-image: -webkit-radial-gradient(50% 50%, @innerColor, @outerColor);
   background-image: -moz-radial-gradient(50% 50%, @innerColor, @outerColor);
   background-image: -o-radial-gradient(50% 50%, @innerColor, @outerColor);
-  //background-image: -ms-radial-gradient(50% 50%, @innerColor, @outerColor); /* IE 10+ */
+  background-image: -ms-radial-gradient(50% 50%, @innerColor, @outerColor); /* IE 10+ */
   background-image: radial-gradient(50% 50%, @innerColor, @outerColor);
   background-repeat: no-repeat;
 }
@@ -139,20 +147,19 @@
   background-image: -webkit-linear-gradient(@value * 1deg, @startColor, @endColor);
   background-image: -moz-linear-gradient(@value * 1deg, @startColor, @endColor);
   background-image: -o-linear-gradient(@value * 1deg, @startColor, @endColor);
-  //background-image: -ms-linear-gradient(@value * 1deg, @startColor, @endColor); /* IE 10+ */
+  background-image: -ms-linear-gradient(@value * 1deg, @startColor, @endColor); /* IE 10+ */
   background-image: linear-gradient(@value * 1deg, @startColor, @endColor);
 }
 
 .background-clip (@value: border-box) { /* border-box | padding-box | content-box */
   -webkit-background-clip: @value;
-     -moz-background-clip: @value;
+     //-moz-background-clip: @value;
           background-clip: @value;
 }
 
 .background-size(@value){
   -webkit-background-size: @value;
      -moz-background-size: @value;
-       -o-background-size: @value;
           background-size: @value;
 }
 
@@ -183,6 +190,12 @@
   -webkit-box-sizing: @type;
      -moz-box-sizing: @type;
           box-sizing: @type;
+}
+
+.tab-size (@value: 8) {
+  -moz-tab-size: @value; /* Firefox 4+ */
+    -o-tab-size: @value; /* Opera 10.60+ */
+       tab-size: @value;
 }
 
 
@@ -235,12 +248,50 @@
 
 .rotateX (@value: 120) {
   -webkit-transform: e(%('rotateX(%d)', @value * 1deg));
+     -moz-transform: e(%('rotateX(%d)', @value * 1deg));
+      -ms-transform: e(%('rotateX(%d)', @value * 1deg));
           transform: e(%('rotateX(%d)', @value * 1deg));
 }
 
 .rotateY (@value: 10) {
   -webkit-transform: e(%('rotateY(%d)', @value * 1deg));
+     -moz-transform: e(%('rotateY(%d)', @value * 1deg));
+      -ms-transform: e(%('rotateY(%d)', @value * 1deg));
           transform: e(%('rotateY(%d)', @value * 1deg));
+}
+
+.translate3d (@x, @y: 0, @z: 0) {
+  -webkit-transform: translate3d(@x, @y, @z);
+     -moz-transform: translate3d(@x, @y, @z);
+      -ms-transform: translate3d(@x, @y, @z); /* IE 10+ */
+       -o-transform: translate3d(@x, @y, @z);
+          transform: translate3d(@x, @y, @z);
+}
+
+.perspective (@value: none) {
+  -webkit-perspective: @value;
+     -moz-perspective: @value * 1px;
+      -ms-perspective: @value; /* IE 10+ */
+          perspective: @value;
+}
+
+
+/* CSS3 2D & 3D Transforms (they are acting only in steam with other functions from "2D & 3D Transforms" group)
+========================== */
+
+.transform-origin (@x: 50%, @y: 50%, @z: 0) {
+  -webkit-transform-origin: @x @y @z;
+     -moz-transform-origin: @x @y @z;
+      -ms-transform-origin: @x @y @z; /* IE 10+ */
+       -o-transform-origin: @x @y @z;
+          transform-origin: @x @y @z;
+}
+
+.transform-style (@value: flat) { /* flat | preserve-3d */
+  -webkit-transform-style: @value;   
+     -moz-transform-style: @value;
+      -ms-transform-style: @value; /* IE 10+ */
+          transform-style: @value; 
 }
 
 
@@ -250,7 +301,8 @@
 .transition (@property: property, @duration: 0.2s, @timing: ease-out, @delay: 0) {
   -webkit-transition: @property @duration @timing @delay;
      -moz-transition: @property @duration @timing; /* @delay value doesn't work on Firefox */
-       -o-transition: @property @duration @timing @delay;
+      -ms-transition: @property @duration @timing @delay; /* IE 10+ */
+       -o-transition: @property @duration @timing @delay; /* Opera 10.5+ */
           transition: @property @duration @timing @delay;
 }
 
@@ -261,11 +313,12 @@
 .animate (@name: none, @duration: 2s, @timing: ease, @delay: 0, @iteration-count: 1, @direction: normal, @state: running) {
   -webkit-animation: @name @duration @timing @delay @iteration-count @direction;
      -moz-animation: @name @duration @timing @iteration-count @direction; /* @delay value doesn't work on Firefox */
-      //-ms-animation: @name @duration @timing @delay @iteration-count @direction; /* IE 10+ */
+      -ms-animation: @name @duration @timing @delay @iteration-count @direction; /* IE 10+ */
           animation: @name @duration @timing @delay @iteration-count @direction;
 
   -webkit-animation-play-state: @state;
      -moz-animation-play-state: @state;
+      -ms-animation-play-state: @state; /* IE 10+ */
           animation-play-state: @state;
 }
 
@@ -281,6 +334,10 @@
   -moz-columns: @columnWidth;
   -moz-column-gap: @columnGap;
   -moz-column-rule: @columnRule;
+
+  -ms-column-width: @columnWidth;
+  -ms-column-gap: @columnGap;
+  -ms-column-rule: @columnRule;
 
   columns: @columnWidth;
   column-gap: @columnGap;

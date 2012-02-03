@@ -54,6 +54,9 @@ List of all functions is on: <a href="http://mrkrupski.github.com/LESS-Dynamic-S
    <li><b>.box-sizing</b>           - Change the box model for an element (e.g., border-box for a full-width input).</li>
    <code>.box-sizing(border-box);</code>
 
+   <li><b>.tab-size</b>             - CSS3 - The tab-size CSS property is used to customize the width of a tab character.</li>
+   <code>.tab-size(8);</code>
+
    <br/>
    <h3>CSS3 2D Transforms</h3>
    <hr/>
@@ -80,6 +83,22 @@ List of all functions is on: <a href="http://mrkrupski.github.com/LESS-Dynamic-S
 
    <li><b>.rotateY</b>              - CSS3 - With the rotateY() method, the element rotates around its Y-axis at a given degree (type only the value - extension is added automatically).</li>
    <code>.rotateY(40);</code>
+
+   <li><b>.translate3d</b>          - CSS3 - Is the same that the 'translate' option but we have at our disposal 3 values (X-axis, Y-axis, Z-axis).</li>
+   <code>.translate3d(8, 5, 4);</code>
+
+   <li><b>.perspective</b>          - CSS3 - Defines a perspective view for a 3D transformed element.</li>
+   <code>.perspective(140);</code>
+
+   <br/>
+   <h3>CSS3 2D & 3D Transforms</h3>
+   <hr/>
+   <h6><i>(they are acting only in steam with other functions from "2D & 3D Transforms" group)</i></h6>
+   <li><b>.transform-origin</b>           - The transform-origin property allows you to change the position on transformed elements.</li>
+   <code>.transform-origin(50%, 50%, 0);</code>
+
+   <li><b>.transform-style</b>           - CSS3 - The transform-style property specifies how nested elements are rendered in 3D space.</li>
+   <code>.transform-style(preserve-3d);</code>
 
    <br/>
    <h3>CSS3 Transitions</h3>
