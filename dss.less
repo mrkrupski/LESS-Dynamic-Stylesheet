@@ -226,12 +226,12 @@
           transform: scale(@ratio);
 }
 
-.skew (@degrees1: 20, @degrees2: 20) {
--webkit-transform: skew(@degrees1 * 1deg, @degrees2 * 1deg);
-   -moz-transform: skew(@degrees1 * 1deg, @degrees2 * 1deg);
-    -ms-transform: skew(@degrees1 * 1deg, @degrees2 * 1deg);
-     -o-transform: skew(@degrees1 * 1deg, @degrees2 * 1deg);
-        transform: skew(@degrees1 * 1deg, @degrees2 * 1deg);
+.skew (@degrees-x: 20, @degrees-y: 20) {
+-webkit-transform: skew(@degrees-x * 1deg, @degrees-y * 1deg);
+   -moz-transform: skew(@degrees-x * 1deg, @degrees-y * 1deg);
+    -ms-transform: skew(@degrees-x * 1deg, @degrees-y * 1deg);
+     -o-transform: skew(@degrees-x * 1deg, @degrees-y * 1deg);
+        transform: skew(@degrees-x * 1deg, @degrees-y * 1deg);
 }
 
 .matrix (@rotate: 0.866, @scale: 0.5, @translate: -0.5, @skew: 0.866, @x: 0, @y: 0) {
