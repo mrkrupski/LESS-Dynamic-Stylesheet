@@ -132,7 +132,7 @@ List of all functions is on: <a href="http://mrkrupski.github.com/LESS-Dynamic-S
    <li><b>.size</b>                 - Quickly set the height and width on one line (you can enter only the values) (type only the value - extension is added automatically).</li>
    <code>.size(200, 100);</code>
 
-   <li><b>.square</b>               - Use this if height and width have the same values (type only the value - extension is added automatically).</li>
+   <li><b>.square</b>               - Use this if height and width have the same values (type only the value, or with the custom extension).</li>
    <code>.square(400);</code>
 
    <li><b>.opacity</b>              - Elements transparency (full = 1 not 100).</li>
