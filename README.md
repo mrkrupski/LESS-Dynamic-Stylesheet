@@ -29,7 +29,7 @@ List of all functions is on: <a href="http://mrkrupski.github.com/LESS-Dynamic-S
    <li><b>.gradient-direction</b>   - CSS3 - Directional background gradient (type only the value - extension is added automatically).</li>
    <code>.gradient-direction(#fff, #aaa, 120);</code>
 
-   <li><b>.background-clip</b>      - Crop the backgroud of an element (border-box | padding-box | content-box).</li>
+   <li><b>.background-clip</b>      - Crop the backgroud of an element (border-box | padding-box | content-box) - value must be without <i>"-box"</i>!.</li>
    <code>.background-clip(border-box);</code>
 
    <li><b>.background-size</b>      - Control the size of background images via CSS3.</li>
@@ -88,7 +88,7 @@ List of all functions is on: <a href="http://mrkrupski.github.com/LESS-Dynamic-S
    <code>.translate3d(8, 5, 4);</code>
 
    <li><b>.perspective</b>          - CSS3 - Defines a perspective view for a 3D transformed element.</li>
-   <code>.perspective(140);</code>
+   <code>.perspective(140, px);</code>
 
    <br/>
    <h3>CSS3 2D & 3D Transforms</h3>
