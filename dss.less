@@ -1,6 +1,6 @@
 /*
 =========================================
- LESS DSS (dynamic stylesheet) 1.6.1
+ LESS DSS (dynamic stylesheet) 1.6.2
 =========================================
 
  LESS mixins by Chris Krupski
@@ -300,7 +300,7 @@
 
 .transition (@property: property, @duration: 0.2s, @timing: ease-out, @delay: 0) {
   -webkit-transition: @property @duration @timing @delay;
-     -moz-transition: @property @duration @timing; /* @delay value doesn't work on the Firefox */
+     -moz-transition: @property @duration @timing ~"@{delay}s";
       -ms-transition: @property @duration @timing @delay; /* IE 10+ */
        -o-transition: @property @duration @timing @delay; /* Opera 10.5+ */
           transition: @property @duration @timing @delay;
@@ -312,7 +312,7 @@
 
 .animate (@name: none, @duration: 2s, @timing: ease, @delay: 0, @iteration-count: 1, @direction: normal, @state: running) {
   -webkit-animation: @name @duration @timing @delay @iteration-count @direction;
-     -moz-animation: @name @duration @timing @iteration-count @direction; /* @delay value doesn't work on the Firefox */
+     -moz-animation: @name @duration @timing ~"@{delay}s" @iteration-count @direction;
       -ms-animation: @name @duration @timing @delay @iteration-count @direction; /* IE 10+ */
           animation: @name @duration @timing @delay @iteration-count @direction;
 
