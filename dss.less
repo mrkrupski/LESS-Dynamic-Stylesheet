@@ -1,59 +1,60 @@
 /*
- LESS DSS (dynamic stylesheet) 1.6.5 (for less.js 1.3.0+)
+ LESS DSS (dynamic stylesheet) 1.8 (for less.js 1.3.0+)
  MORE INFO: http://cl.ly/Dqnr
 
  LESS mixins by Chris Krupski
 */
 
 
-/* CSS Backgrounds
+/* Backgrounds Group
 ========================== */
 
 .gradient-h (@startColor: #EEE, @endColor: #FFF) {
   background-color: @endColor;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
-  background-image: -webkit-linear-gradient(top, @startColor, @endColor);
-  background-image: -moz-linear-gradient(top, @startColor, @endColor);
-  background-image: -o-linear-gradient(top, @startColor, @endColor);
-  background-image: -ms-linear-gradient(top, @startColor, @endColor); /* IE 10+ */
-  background-image: linear-gradient(top, @startColor, @endColor);
-  background-repeat: repeat-x;
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
-}
-
-.gradient-hline (@startColor: #B0BAC5, @middleColor1: #9DA7B2, @middleColor2: #919CA8, @endColor: #7E8A98) {
-  background: @endColor;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(50%, @middleColor1), color-stop(51%, @middleColor2), color-stop(100%, @endColor));
-  background-image: -webkit-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-  background-image: -moz-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-  background-image: -o-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-  background-image: -ms-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%); /* IE 10+ */
-  background-image: linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-}
-
-.gradient-v (@startColor: #EEE, @endColor: #FFF) {
-  background-color: mix(@startColor, @endColor, 60%);
-  background-image: -webkit-gradient(linear, left center, right center, from(@startColor), to(@endColor));
+  background-image: -webkit-gradient(linear, left center, right center, from(@startColor),to(@endColor));
   background-image: -webkit-linear-gradient(left, @startColor, @endColor);
   background-image: -moz-linear-gradient(left, @startColor, @endColor);
   background-image: -o-linear-gradient(left, @startColor, @endColor);
-  background-image: -ms-linear-gradient(left, @startColor, @endColor); /* IE 10+ */
+  background-image: -ms-linear-gradient(left, @startColor, @endColor);
   background-image: linear-gradient(left, @startColor, @endColor);
-  background-repeat: repeat-x;
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
 }
 
-.gradient-v3colors (@startColor: #00b3ee, @middleColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
-  background-color: mix(@middleColor, @endColor, 80%);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @middleColor), to(@endColor));
-  background-image: -webkit-linear-gradient(@startColor, @middleColor @colorStop, @endColor);
-  background-image: -moz-linear-gradient(top, @startColor, @middleColor @colorStop, @endColor);
-  background-image: -ms-linear-gradient(@startColor, @middleColor @colorStop, @endColor); /* IE 10+ */
-  background-image: -o-linear-gradient(@startColor, @middleColor @colorStop, @endColor);
-  background-image: linear-gradient(@startColor, @middleColor @colorStop, @endColor);
-  background-repeat: no-repeat;
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='%d', endColorstr='%d')", @startColor, @endColor));
-}
+/* @group gradient-veritical() */
+
+  .gradient-v (@startColor: #EEE, @endColor: #FFF) {
+    background-color: mix(@startColor, @endColor, 60%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor);
+    background-image: -moz-linear-gradient(top, @startColor, @endColor);
+    background-image: -o-linear-gradient(top, @startColor, @endColor);
+    background-image: -ms-linear-gradient(top, @startColor, @endColor); /* IE 10+ */
+    background-image: linear-gradient(top, @startColor, @endColor);
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
+  }
+
+  .gradient-vline (@startColor: #B0BAC5, @middleColor1: #9DA7B2, @middleColor2: #919CA8, @endColor: #7E8A98) {
+    background: mix(@middleColor1, @middleColor2, 50%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(50%, @middleColor1), color-stop(51%, @middleColor2), color-stop(100%, @endColor));
+    background-image: -webkit-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
+    background-image: -moz-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
+    background-image: -o-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
+    background-image: -ms-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%); /* IE 10+ */
+    background-image: linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
+  }
+
+  .gradient-v3colors (@startColor: #00b3ee, @middleColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
+    background-color: mix(@middleColor, @endColor, 80%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), color-stop(@colorStop, @middleColor), to(@endColor));
+    background-image: -webkit-linear-gradient(@startColor, @middleColor @colorStop, @endColor);
+    background-image: -moz-linear-gradient(top, @startColor, @middleColor @colorStop, @endColor);
+    background-image: -ms-linear-gradient(@startColor, @middleColor @colorStop, @endColor); /* IE 10+ */
+    background-image: -o-linear-gradient(@startColor, @middleColor @colorStop, @endColor);
+    background-image: linear-gradient(@startColor, @middleColor @colorStop, @endColor);
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='%d', endColorstr='%d')", @startColor, @endColor));
+  }
+
+/* @end */
 
 .gradient-radial (@innerColor: #EEE, @outerColor: #FFF) {
   background-color: @outerColor;
@@ -63,7 +64,6 @@
   background-image: -o-radial-gradient(50% 50%, @innerColor, @outerColor);
   background-image: -ms-radial-gradient(50% 50%, @innerColor, @outerColor); /* IE 10+ */
   background-image: radial-gradient(50% 50%, @innerColor, @outerColor);
-  background-repeat: no-repeat;
 }
 
 .gradient-direction (@startColor: #555, @endColor: #333, @degrees: 45) {
@@ -76,51 +76,67 @@
   background-image: linear-gradient(~"@{degrees}deg", @startColor, @endColor);
 }
 
-.background-clip (@type: border) when (@type = border), (@type = padding), (@type = content) { /* ( border | padding | content ) - ! value must be without "-box" ! */
+.bg-clip (@type: border) when (@type = border), (@type = padding), (@type = content) { /* ( border | padding | content ) - ! value must be without "-box" ! */
   -webkit-background-clip: ~"@{type}-box";
      -moz-background-clip: @type;
           background-clip: ~"@{type}-box";
 }
 
-.background-size (@value) {
+.bg-size (@value) {
   -webkit-background-size: @value;
      -moz-background-size: @value;
           background-size: @value;
 }
 
 
-/* CSS3 Borders
+/* Box Group
 ========================== */
 
-.box-shadow (@values: "1px 1px 2px rgba(0, 0, 0, .5), 0 0 4px #fff, inset 1px 3px 2px #000") { /* for multi-values */
-  -webkit-box-shadow: e(@values);
-     -moz-box-shadow: e(@values);
-          box-shadow: e(@values);
+/* @option: box-display() */
+
+  .box-display () {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: box;
+  }
+
+/* @end */
+
+.box-align (@value) { /* ( start | end | center | baseline | stretch ) */
+  -webkit-box-align: @value;
+     -moz-box-align: @value;
+      -ms-box-align: @value;
+          box-align: @value;
+
+  .box-display;
 }
 
-.box-shadow (in, @values) {
-  -webkit-box-shadow: inset @values;
-     -moz-box-shadow: inset @values;
-          box-shadow: inset @values;
+.box-direction (@value) { /* ( normal | reverse | inherit ) */
+  -webkit-box-align: @value;
+     -moz-box-align: @value;
+      -ms-box-align: @value;
+          box-align: @value;
+
+  .box-display;
 }
 
-.box-shadow (out, @values) {
-  -webkit-box-shadow: @values;
-     -moz-box-shadow: @values;
-          box-shadow: @values;
+.box-orient (@value) { /* ( horizontal | vertical | inline-axis | block-axis | inherit ) */
+  -webkit-box-align: @value;
+     -moz-box-align: @value;
+      -ms-box-align: @value;
+          box-align: @value;
+
+  .box-display;
 }
 
-.border-image (@source: none, @slice: 100%, @width: 1, @outset: 0, @repeat: stretch) { /* repeat: stretch | repeat | round */
-  -webkit-border-image: @arguments;
-     -moz-border-image: @arguments;
-       -o-border-image: @arguments;
-          border-image: @arguments;
-}
+.box-pack (@value) { /* ( start | end | center | justify ) */
+  -webkit-box-align: @value;
+     -moz-box-align: @value;
+      -ms-box-align: @value;
+          box-align: @value;
 
-.rounded (@radius: 2px) {
-  -webkit-border-radius: @radius;
-     -moz-border-radius: @radius;
-          border-radius: @radius;
+  .box-display;
 }
 
 .box-sizing (@type: border-box) { /* ( content-box | border-box | inherit ) */
@@ -129,25 +145,126 @@
           box-sizing: @type;
 }
 
-.tab-size (@value: 8) {
-  -moz-tab-size: @value; /* Firefox 4+ */
-    -o-tab-size: @value; /* Opera 10.60+ */
-       tab-size: @value;
-}
+/* @group box-shadow() */
+
+  .box-shadow (@values: "1px 1px 2px #000, 0 0 4px #fff, inset 1px 3px 2px #000") { /* for multi values */
+    -webkit-box-shadow: e(@values); /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+       -moz-box-shadow: e(@values); /* FF3.5 - 3.6 */
+            box-shadow: e(@values); /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+  }
+
+  .box-shadow (in, @value) {
+    -webkit-box-shadow: inset @value;
+       -moz-box-shadow: inset @value;
+            box-shadow: inset @value;
+  }
+
+  .box-shadow (out, @value) {
+    -webkit-box-shadow: @value;
+       -moz-box-shadow: @value;
+            box-shadow: @value;
+  }
+
+/* @end */
 
 
-/* CSS3 2D Transforms
+/* Border Group
 ========================== */
 
-.rotate (@degrees: 5){
-  -webkit-transform: rotate(~"@{degrees}deg");
-     -moz-transform: rotate(~"@{degrees}deg");
-      -ms-transform: rotate(~"@{degrees}deg");
-       -o-transform: rotate(~"@{degrees}deg");
-          transform: rotate(~"@{degrees}deg");
+.border-image (@source: none, @values: 30 30 repeat) { /* ( source | slice | width | outset | repeat ) */
+  -webkit-border-image: e(%("url('%d')", ~"@{source}")) @values;
+     -moz-border-image: e(%("url('%d')", ~"@{source}")) @values;
+       -o-border-image: e(%("url('%d')", ~"@{source}")) @values;
+          border-image: e(%("url('%d')", ~"@{source}")) @values;
 }
 
-.scale (@ratio: 1.5){
+.rounded (@radius: 2px) {
+  -webkit-border-radius: @radius; /* Saf3-4, iOS 1-3.2, Android ≤1.6 */
+     -moz-border-radius: @radius; /* FF1-3.6 */
+          border-radius: @radius;
+}
+
+
+/* Transform Group
+========================== */
+
+.transform (@options) { /* clear transform function */
+  -webkit-transform: @options;
+     -moz-transform: @options;
+      -ms-transform: @options;
+       -o-transform: @options;
+          transform: @options;
+}
+
+/* @group matrix() */
+
+  .matrix (@rotate: 0.86, @scale: 0.5, @translate: -0.5, @skew: 0.86, @x: 0, @y: 0) {
+    -webkit-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+       -moz-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+        -ms-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+         -o-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+            transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+  
+    filter: e(%("progid:DXImageTransform.Microsoft.Matrix(M11=%d, M12=%d, M21=%d, M22=%d, sizingMethod='auto expand')", @rotate, @scale, @translate, @skew));
+  }
+
+  .matrix3d (@values: "1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1") {
+    -webkit-transform: matrix3d(e(@values));
+       -moz-transform: matrix3d(e(@values));
+        -ms-transform: matrix3d(e(@values));
+         -o-transform: matrix3d(e(@values));
+            transform: matrix3d(e(@values));
+  }
+
+/* @end */
+
+/* @group rotate() */
+
+  .rotate (@degrees: 5) {
+    -webkit-transform: rotate(~"@{degrees}deg");
+       -moz-transform: rotate(~"@{degrees}deg");
+        -ms-transform: rotate(~"@{degrees}deg");
+         -o-transform: rotate(~"@{degrees}deg");
+            transform: rotate(~"@{degrees}deg");
+  }
+
+  .rotate3d (@x: 0, @y: 0, @z: 0, @degrees: 120) {
+    -webkit-transform: rotate3d(@x, @y, @z, ~"@{degrees}deg");
+       -moz-transform: rotate3d(@x, @y, @z, ~"@{degrees}deg");
+        -ms-transform: rotate3d(@x, @y, @z, ~"@{degrees}deg");
+         -o-transform: rotate3d(@x, @y, @z, ~"@{degrees}deg");
+            transform: rotate3d(@x, @y, @z, ~"@{degrees}deg");
+  }
+
+  .rotate (x, @degrees: 120) {
+    -webkit-transform: e(%('rotateX(%d)', ~"@{degrees}deg"));
+       -moz-transform: e(%('rotateX(%d)', ~"@{degrees}deg"));
+        -ms-transform: e(%('rotateX(%d)', ~"@{degrees}deg"));
+         -o-transform: e(%('rotateX(%d)', ~"@{degrees}deg"));
+            transform: e(%('rotateX(%d)', ~"@{degrees}deg"));
+  }
+
+  .rotate (y, @degrees: 10) {
+    -webkit-transform: e(%('rotateY(%d)', ~"@{degrees}deg"));
+       -moz-transform: e(%('rotateY(%d)', ~"@{degrees}deg"));
+        -ms-transform: e(%('rotateY(%d)', ~"@{degrees}deg"));
+         -o-transform: e(%('rotateY(%d)', ~"@{degrees}deg"));
+            transform: e(%('rotateY(%d)', ~"@{degrees}deg"));
+  }
+
+  .rotate (z, @degrees: 10) {
+    -webkit-transform: e(%('rotateZ(%d)', ~"@{degrees}deg"));
+       -moz-transform: e(%('rotateZ(%d)', ~"@{degrees}deg"));
+        -ms-transform: e(%('rotateZ(%d)', ~"@{degrees}deg"));
+         -o-transform: e(%('rotateZ(%d)', ~"@{degrees}deg"));
+            transform: e(%('rotateZ(%d)', ~"@{degrees}deg"));
+  }
+
+/* @end */
+
+/* @group scale() */
+
+.scale (@ratio: 1) {
   -webkit-transform: scale(@ratio);
      -moz-transform: scale(@ratio);
       -ms-transform: scale(@ratio);
@@ -155,55 +272,110 @@
           transform: scale(@ratio);
 }
 
-.translate (@x:0, @y:0) {
-  -webkit-transform: translate(@x * 1px, @y * 1px);
-     -moz-transform: translate(@x * 1px, @y * 1px);
-      -ms-transform: translate(@x * 1px, @y * 1px);
-       -o-transform: translate(@x * 1px, @y * 1px);
-          transform: translate(@x * 1px, @y * 1px);
+.scale3d (@x: 1, @y: 1, @z: 1) {
+  -webkit-transform: scale3d(@x, @y, @z);
+     -moz-transform: scale3d(@x, @y, @z);
+      -ms-transform: scale3d(@x, @y, @z);
+          transform: scale3d(@x, @y, @z);
 }
 
-.skew (@degrees-x: 20, @degrees-y: 20) {
--webkit-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
-   -moz-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
-    -ms-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
-     -o-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
-        transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
+.scale (x, @value: 1) {
+  -webkit-transform: e(%('scaleX(%d)', @value));
+     -moz-transform: e(%('scaleX(%d)', @value));
+      -ms-transform: e(%('scaleX(%d)', @value));
+       -o-transform: e(%('scaleX(%d)', @value));
+          transform: e(%('scaleX(%d)', @value));
 }
 
-.matrix (@rotate: 0.866, @scale: 0.5, @translate: -0.5, @skew: 0.866, @x: 0, @y: 0) {
-  -webkit-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
-     -moz-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
-      -ms-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
-       -o-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
-          transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+.scale (y, @value: 1) {
+  -webkit-transform: e(%('scaleY(%d)', @value));
+     -moz-transform: e(%('scaleY(%d)', @value));
+      -ms-transform: e(%('scaleY(%d)', @value));
+       -o-transform: e(%('scaleY(%d)', @value));
+          transform: e(%('scaleY(%d)', @value));
 }
 
-
-/* CSS3 3D Transforms
-========================== */
-
-.rotate3d (x, @degrees: 120) {
-  -webkit-transform: e(%('rotateX(%d)', ~"@{degrees}deg"));
-     -moz-transform: e(%('rotateX(%d)', ~"@{degrees}deg"));
-      -ms-transform: e(%('rotateX(%d)', ~"@{degrees}deg"));
-          transform: e(%('rotateX(%d)', ~"@{degrees}deg"));
+.scale (z, @value: 1) {
+  -webkit-transform: e(%('scaleZ(%d)', @value));
+     -moz-transform: e(%('scaleZ(%d)', @value));
+      -ms-transform: e(%('scaleZ(%d)', @value));
+       -o-transform: e(%('scaleZ(%d)', @value));
+          transform: e(%('scaleZ(%d)', @value));
 }
 
-.rotate3d (y, @degrees: 10) {
-  -webkit-transform: e(%('rotateY(%d)', ~"@{degrees}deg"));
-     -moz-transform: e(%('rotateY(%d)', ~"@{degrees}deg"));
-      -ms-transform: e(%('rotateY(%d)', ~"@{degrees}deg"));
-          transform: e(%('rotateY(%d)', ~"@{degrees}deg"));
-}
+/* @end */
 
-.translate3d (@x: 0, @y: 0, @z: 0) {
-  -webkit-transform: translate3d(@x, @y, @z);
-     -moz-transform: translate3d(@x, @y, @z);
-      -ms-transform: translate3d(@x, @y, @z); /* IE 10+ */
-       -o-transform: translate3d(@x, @y, @z);
-          transform: translate3d(@x, @y, @z);
-}
+/* @group translate() -> (less.js) TypeError: Object #<Object> has no method 'operate' */
+
+  .translate (@x: 0, @y: 0) {
+    -webkit-transform: translate(@x * 1px, @y * 1px);
+       -moz-transform: translate(@x * 1px, @y * 1px);
+        -ms-transform: translate(@x * 1px, @y * 1px);
+         -o-transform: translate(@x * 1px, @y * 1px);
+            transform: translate(@x * 1px, @y * 1px);
+  }
+
+  .translate3d (@x: 0, @y: 0, @z: 0) {
+    -webkit-transform: translate3d(@x * 1px, @y * 1px, @z * 1px);
+       -moz-transform: translate3d(@x * 1px, @y * 1px, @z * 1px);
+        -ms-transform: translate3d(@x * 1px, @y * 1px, @z * 1px);
+         -o-transform: translate3d(@x * 1px, @y * 1px, @z * 1px);
+            transform: translate3d(@x * 1px, @y * 1px, @z * 1px);
+  }
+
+  .translateX (@x: 0) {
+    -webkit-transform: e(%('translateX(%d)', @x * 1px));
+       -moz-transform: e(%('translateX(%d)', @x * 1px));
+        -ms-transform: e(%('translateX(%d)', @x * 1px));
+         -o-transform: e(%('translateX(%d)', @x * 1px));
+            transform: e(%('translateX(%d)', @x * 1px));
+  }
+
+  .translateY (@y: 0) {
+    -webkit-transform: e(%('translateY(%d)', @y * 1px));
+       -moz-transform: e(%('translateY(%d)', @y * 1px));
+        -ms-transform: e(%('translateY(%d)', @y * 1px));
+         -o-transform: e(%('translateY(%d)', @y * 1px));
+            transform: e(%('translateY(%d)', @y * 1px));
+  }
+
+  .translateZ (@z: 0) {
+    -webkit-transform: e(%('translateZ(%d)', @z * 1px));
+       -moz-transform: e(%('translateZ(%d)', @z * 1px));
+        -ms-transform: e(%('translateZ(%d)', @z * 1px));
+         -o-transform: e(%('translateZ(%d)', @z * 1px));
+            transform: e(%('translateZ(%d)', @z * 1px));
+  }
+
+/* @end */
+
+/* @group skew() -> (less.js) TypeError: Object #<Object> has no method 'operate' */
+
+  .skew (@degrees-x: 20, @degrees-y: 20) {
+  -webkit-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
+     -moz-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
+      -ms-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
+       -o-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
+          transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
+  }
+
+  .skewX (@degrees-x: 20) {
+  -webkit-transform: e(%('skewX(%d)', ~"@{degrees-x}deg"));
+     -moz-transform: e(%('skewX(%d)', ~"@{degrees-x}deg"));
+      -ms-transform: e(%('skewX(%d)', ~"@{degrees-x}deg"));
+       -o-transform: e(%('skewX(%d)', ~"@{degrees-x}deg"));
+          transform: e(%('skewX(%d)', ~"@{degrees-x}deg"));
+  }
+
+  .skewY (@degrees-x: 20) {
+  -webkit-transform: e(%('skewY(%d)', ~"@{degrees-x}deg"));
+     -moz-transform: e(%('skewY(%d)', ~"@{degrees-x}deg"));
+      -ms-transform: e(%('skewY(%d)', ~"@{degrees-x}deg"));
+       -o-transform: e(%('skewY(%d)', ~"@{degrees-x}deg"));
+          transform: e(%('skewy(%d)', ~"@{degrees-x}deg"));
+  }
+
+/* @end */
 
 .perspective (@value: none, @unit: px) {
   -webkit-perspective: @value;
@@ -212,9 +384,12 @@
           perspective: @value;
 }
 
-
-/* CSS3 (2D & 3D) Pref.
-========================== */
+.perspective-origin (@values: 50% 50%) {
+  -webkit-perspective-origin: @values;
+     -moz-perspective-origin: @values;
+      -ms-perspective-origin: @values; /* IE 10+ */
+          perspective-origin: @values;
+}
 
 .transform-origin (@x: 50%, @y: 50%, @z: 0) {
   -webkit-transform-origin: @arguments;
@@ -224,15 +399,15 @@
           transform-origin: @arguments;
 }
 
-.transform-style (@value: flat) { /* flat | preserve-3d */
+.transform-style (@value: flat) { /* ( flat | preserve-3d ) */
   -webkit-transform-style: @value;   
-     -moz-transform-style: @value;
+     -moz-transform-style: @value; /* FF 10+ */
       -ms-transform-style: @value; /* IE 10+ */
           transform-style: @value; 
 }
 
 
-/* CSS3 Transitions
+/* Transition
 ========================== */
 
 .transition (@property: property, @duration: 0.2s, @timing: ease-out, @delay: 0) {
@@ -244,15 +419,17 @@
 }
 
 
-/* CSS3 Animations
+/* Animation Group
 ========================== */
 
-.animate (@name: none, @duration: 2s, @timing: ease, @delay: 0, @iteration-count: 1, @direction: normal, @state: running) {
-  -webkit-animation: @name @duration @timing @delay @iteration-count @direction;
-     -moz-animation: @name @duration @timing ~"@{delay}s" @iteration-count @direction;
+.animate (@name: none, @duration: 2s, @timing: ease, @delay: 0, @iteration-count: 1, @direction: normal) {
+  -webkit-animation: @name @duration @timing @delay @iteration-count @direction; /* Saf5, Chrome */
+     -moz-animation: @name @duration @timing ~"@{delay}s" @iteration-count @direction; /* FF5+ */
       -ms-animation: @name @duration @timing @delay @iteration-count @direction; /* IE 10+ */
-          animation: @name @duration @timing @delay @iteration-count @direction;
+       -o-animation: @name @duration @timing @delay @iteration-count @direction; /* Opera 12+ */
+}
 
+.animation-state (@state: running) { /* ( paused | running ) */
   -webkit-animation-play-state: @state;
      -moz-animation-play-state: @state;
       -ms-animation-play-state: @state; /* IE 10+ */
@@ -260,29 +437,23 @@
 }
 
 
-/* CSS3 Multiple Columns
+/* Column
 ========================== */
 
-.columns (@columnWidth-Count: auto auto, @columnGap: normal, @columnRule: medium none black) {
-  -webkit-columns: @columnWidth-Count;
+.columns (@columnCount: auto, @columnGap: normal) {
+  -webkit-columns: @columnCount;
+     -moz-columns: @columnCount;
+      -ms-columns: @columnCount;
+          columns: @columnCount;
+
   -webkit-column-gap: @columnGap;
-  -webkit-column-rule: @columnRule;
-
-  -moz-columns: @columnWidth-Count;
-  -moz-column-gap: @columnGap;
-  -moz-column-rule: @columnRule;
-
-  -ms-column-width: @columnWidth-Count;
-  -ms-column-gap: @columnGap;
-  -ms-column-rule: @columnRule;
-
-  columns: @columnWidth-Count;
-  column-gap: @columnGap;
-  column-rule: @columnRule;
+     -moz-column-gap: @columnGap;
+      -ms-column-gap: @columnGap;
+          column-gap: @columnGap;
 }
 
 
-/* CSS Misc
+/* Misc Group
 ========================== */
 
 .opacity (@opacity: 0.5) when (isnumber(@opacity)), (@opacity >= 0), (@opacity =< 1) {
@@ -291,19 +462,48 @@
   filter: e(%("alpha(opacity=%d)", @opacity*100));
 }
 
-.font (@size: 40, @line-height: 1.5, @weight: normal) {
-  font-size: @size * 1px /* / 16 * 1em*/;
-  line-height: @line-height /* * 1px / 16 * 1em*/;
+.font (@style: normal, @variant: normal, @weight: normal, @size: medium, @line-height: normal, @family: "'Lucida Grande', Helvetica, Arial, Verdana, sans-serif") {
+  font-style: @style;
+  font-variant: @variant;
   font-weight: @weight;
+  font-size: @size;
+  line-height: @line-height;
+  font-family: e(@family);
 }
 
-.size (@width: 20, @height: 20) {
+.font-face (@name: helvetca, @url: "/assets/font/helvetica/helvetca-neue") {
+  @font-face {
+    font-family: %('%d', @name);
+    src: e(%("url('%d.eot?#') format('eot')", ~"@{url}")),
+         e(%("url('%d.woff') format('woff')", ~"@{url}")),
+         e(%("url('%d.ttf') format('truetype')", ~"@{url}"));
+  }
+}
+
+.size (@width: 400, @height: 200) {
   width: @width * 1px;
   height: @height * 1px;
 }
 
 .square (@value: 100) {
   .size(@value, @value);
+}
+
+.resizable(@direction: both) { /* ( horizontal | vertical | both ) */
+  resize: @direction;
+  overflow: auto;
+}
+
+.hide-text () {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.center-block () {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .clearfix () {
