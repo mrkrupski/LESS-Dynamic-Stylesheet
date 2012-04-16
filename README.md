@@ -78,7 +78,7 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <hr/>
 
    <li><b>.transform</b></li>
-   <code>.transform ( "perspective(0) translate3d(50px, 40px, 80px) scale3d(1, 2, 0) rotate3d(0, 1, 0, 45deg)" );</code>
+   <code>.transform ( perspective(0) translate3d(50px, 40px, 80px) scale3d(1, 2, 0) rotate3d(0, 1, 0, 45deg) );</code>
 
    <li><b>.matrix</b></li>
    <code>.matrix ( 0.9, 0.2, -0.5, 0.9, 0, 0 );</code>
