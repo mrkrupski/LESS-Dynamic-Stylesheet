@@ -157,7 +157,7 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <span>(checkout: http://daneden.me/animate/)</span>
    <hr/>
 
-   <li><b>.transition</b></li>
+   <li><b>.animate</b></li>
    <code>.animate ( wobble );</code>
    <br/>
    <code>.animate ( wobble, 2s, ease, 0, 1, normal );</code>
