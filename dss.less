@@ -76,13 +76,13 @@
   background-image: linear-gradient(~"@{degrees}deg", @startColor, @endColor);
 }
 
-.bg-clip (@type: border) when (@type = border), (@type = padding), (@type = content) { /* ( border | padding | content ) - ! value must be without "-box" ! */
+.background-clip (@type: border) when (@type = border), (@type = padding), (@type = content) { /* ( border | padding | content ) - ! value must be without "-box" ! */
   -webkit-background-clip: ~"@{type}-box";
      -moz-background-clip: @type;
           background-clip: ~"@{type}-box";
 }
 
-.bg-size (@value) {
+.background-size (@value) {
   -webkit-background-size: @value;
      -moz-background-size: @value;
           background-size: @value;
@@ -351,7 +351,7 @@
 
 /* @group skew() */
 
-  .skew (@degrees-x: 20, @degrees-y: 20) {
+  .skew (@degrees-x: 20, @degrees-y: 20) when not (@degrees-x = x) and not (@degrees-x = y) {
   -webkit-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
      -moz-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
       -ms-transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
@@ -359,7 +359,7 @@
           transform: skew(~"@{degrees-x}deg", ~"@{degrees-y}deg");
   }
 
-  .skewX (@degrees-x: 20) {
+  .skew (@axis, @degrees-x: 20) when (@axis = x) {
   -webkit-transform: e(%('skewX(%d)', ~"@{degrees-x}deg"));
      -moz-transform: e(%('skewX(%d)', ~"@{degrees-x}deg"));
       -ms-transform: e(%('skewX(%d)', ~"@{degrees-x}deg"));
@@ -367,7 +367,7 @@
           transform: e(%('skewX(%d)', ~"@{degrees-x}deg"));
   }
 
-  .skewY (@degrees-y: 20) {
+  .skew (@axis, @degrees-y: 20) when (@axis = y) {
   -webkit-transform: e(%('skewY(%d)', ~"@{degrees-y}deg"));
      -moz-transform: e(%('skewY(%d)', ~"@{degrees-y}deg"));
       -ms-transform: e(%('skewY(%d)', ~"@{degrees-y}deg"));

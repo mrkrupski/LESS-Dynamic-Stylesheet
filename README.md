@@ -29,11 +29,11 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <li><b>.gradient-direction</b></li>
    <code>.gradient-direction ( #fff, #aaa, 120 );</code>
 
-   <li><b>.bg-clip</b> - (the value must be without <i>"-box"</i>!)</li>
-   <code>.bg-clip ( border );</code>
+   <li><b>.background-clip</b> - (the value must be without <i>"-box"</i>!)</li>
+   <code>.background-clip ( border );</code>
 
-   <li><b>.bg-size</b></li>
-   <code>.bg-size ( 100%, 50% );</code>
+   <li><b>.background-size</b></li>
+   <code>.background-size ( 100%, 50% );</code>
 
    <br/>
    <h3>Box Group</h3>
@@ -92,11 +92,11 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <code>.rotate ( x, 45 );</code>
    <br/>
    <code>.rotate ( y, 45 );</code>
+   <br/>
+   <code>.rotate ( z, 45 );</code>
 
    <li><b>.rotate3d</b></li>
    <code>.rotate ( 15, 10, 5, 45 );</code>
-   <br/>
-   <code>.rotate3d ( z, 45 );</code>
    
    <li><b>.scale</b></li>
    <code>.scale ( 0.8 );</code>
@@ -104,30 +104,30 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <code>.scale ( x, 0.4 );</code>
    <br/>
    <code>.scale ( y, 1.3 );</code>
+   <br/>
+   <code>.scale3d ( z, .7 );</code>
 
    <li><b>.scale3d</b></li>
    <code>.scale3d ( .4, .5, 1.2 );</code>
-   <br/>
-   <code>.scale3d ( z, .7 );</code>
 
    <li><b>.translate</b></li>
    <code>.translate ( 20, 40 );</code>
    <br/>
-   <code>.translateX ( 20 );</code>
+   <code>.translate ( x, 20 );</code>
    <br/>
-   <code>.translateY ( 40 );</code>
+   <code>.translate ( y, 40 );</code>
+   <br/>
+   <code>.translate ( z, 60 );</code>
 
    <li><b>.translate3d</b></li>
    <code>.translate3d ( 20, 40, 60 );</code>
-   <br/>
-   <code>.translateZ ( 60 );</code>
 
    <li><b>.skew</b></li>
    <code>.skew ( 30, 4 );</code>
    <br/>
-   <code>.skewX ( 20 );</code>
+   <code>.skew ( x, 20 );</code>
    <br/>
-   <code>.skewY ( -30 );</code>
+   <code>.skew ( y, -30 );</code>
 
    <li><b>.perspective</b></li>
    <code>.perspective ( 250 );</code>
