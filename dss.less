@@ -1,5 +1,5 @@
 /*
- LESS DSS (dynamic stylesheet) 1.8 (for less.js 1.3.0+)
+ LESS DSS (dynamic stylesheet) 1.8.3 (for less.js 1.3.0+)
  MORE INFO: http://cl.ly/Dqnr
 
  LESS mixins by Chris Krupski
@@ -76,15 +76,15 @@
   background-image: linear-gradient(~"@{degrees}deg", @startColor, @endColor);
 }
 
-.background-clip (@type: border) when (@type = border), (@type = padding), (@type = content) { /* ( border | padding | content ) - ! value must be without "-box" ! */
-  -webkit-background-clip: ~"@{type}-box";
-     -moz-background-clip: @type;
-          background-clip: ~"@{type}-box";
+.bg-clip (@type: border-box) { /* ( border-box | padding-box | content-box ) */
+  -webkit-background-clip: @type;
+  /* -moz-background-clip: @type; Firefox 3.6 */
+          background-clip: @type;
 }
 
-.background-size (@value) {
+.bg-size (@value) {
   -webkit-background-size: @value;
-     -moz-background-size: @value;
+  /* -moz-background-size: @value; */
           background-size: @value;
 }
 
@@ -149,19 +149,19 @@
 
   .box-shadow (@values: "1px 1px 2px #000, 0 0 4px #fff, inset 1px 3px 2px #000") { /* for multi values */
     -webkit-box-shadow: e(@values); /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-       -moz-box-shadow: e(@values); /* FF3.5 - 3.6 */
+    /* -moz-box-shadow: e(@values); FF3.5 - 3.6 */
             box-shadow: e(@values); /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
   }
 
   .box-shadow (in, @value) {
     -webkit-box-shadow: inset @value;
-       -moz-box-shadow: inset @value;
+    /* -moz-box-shadow: inset @value; */
             box-shadow: inset @value;
   }
 
   .box-shadow (out, @value) {
     -webkit-box-shadow: @value;
-       -moz-box-shadow: @value;
+    /* -moz-box-shadow: @value; */
             box-shadow: @value;
   }
 
@@ -178,11 +178,55 @@
           border-image: e(%("url('%d')", ~"@{source}")) @values;
 }
 
-.rounded (@radius: 2px) {
-  -webkit-border-radius: @radius; /* Saf3-4, iOS 1-3.2, Android ≤1.6 */
-     -moz-border-radius: @radius; /* FF1-3.6 */
-          border-radius: @radius;
-}
+/* @group rounded() */
+
+  .rounded (@radius: 2px) {
+    -webkit-border-radius: @radius; /* Saf3-4, iOS 1-3.2, Android ≤1.6 */
+    /* -moz-border-radius: @radius; FF1-3.6 */
+            border-radius: @radius;
+  }
+
+  .rounded (top, @value: 4) {
+    -webkit-border-top-left-radius: @value * 1px;
+    /* -moz-border-top-left-radius: @value * 1px; */
+            border-top-left-radius: @value * 1px;
+    
+    -webkit-border-top-right-radius: @value * 1px;
+    /* -moz-border-top-right-radius: @value * 1px; */
+            border-top-right-radius: @value * 1px;
+  }
+
+  .rounded (right, @value: 4) {
+    -webkit-border-top-right-radius: @value * 1px;
+    /* -moz-border-top-right-radius: @value * 1px; */
+            border-top-right-radius: @value * 1px;
+
+    -webkit-border-bottom-right-radius: @value * 1px;
+    /* -moz-border-bottom-right-radius: @value * 1px; */
+            border-bottom-right-radius: @value * 1px;
+  }
+
+  .rounded (bottom, @value: 4) {
+    -webkit-border-bottom-right-radius: @value * 1px;
+    /* -moz-border-bottom-right-radius: @value * 1px; */
+            border-bottom-right-radius: @value * 1px;
+
+    -webkit-border-bottom-left-radius: @value * 1px;
+    /* -moz-border-bottom-left-radius: @value * 1px; */
+            border-bottom-left-radius: @value * 1px;
+  }
+
+  .rounded (left, @value: 4) {
+    -webkit-border-top-left-radius: @value * 1px;
+    /* -moz-border-top-left-radius: @value * 1px; */
+            border-top-left-radius: @value * 1px;
+
+    -webkit-border-bottom-left-radius: @value * 1px;
+    /* -moz-border-bottom-left-radius: @value * 1px; */
+            border-bottom-left-radius: @value * 1px;
+  }
+
+/* @end */
 
 
 /* Transform Group
@@ -471,7 +515,7 @@
   font-family: e(@family);
 }
 
-.font-face (@name: helvetca, @url: "/assets/font/helvetica/helvetca-neue") {
+.font-face (@name: Helvetca Neue, @url: "/assets/font/helvetica/helvetca-neue") {
   @font-face {
     font-family: %('%d', @name);
     src: e(%("url('%d.eot?#') format('eot')", ~"@{url}")),

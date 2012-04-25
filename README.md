@@ -5,7 +5,7 @@ LESS DSS (dynamic stylesheet)
 It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.org" target="_blank">lesscss.org</a>.
 <br/>I recommend a "<a href="http://incident57.com/codekit/" target="_blank">CodeKit</a>" app for the auto compress (OS X).
 
-<b>Examples how to use the functions contained in "less.dss" file:</b>
+<b>Examples how to use the functions contained in "less.dss" (v1.8.1) file:</b>
 
  <ul>
    <h3>Backgrounds Group</h3>
@@ -29,11 +29,11 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <li><b>.gradient-direction</b></li>
    <code>.gradient-direction ( #fff, #aaa, 120 );</code>
 
-   <li><b>.background-clip</b> - (the value must be without <i>"-box"</i>!)</li>
-   <code>.background-clip ( border );</code>
+   <li><b>.bg-clip</b> - (value without the '-box' add support for older browsers)</li>
+   <code>.bg-clip ( border );</code>
 
-   <li><b>.background-size</b></li>
-   <code>.background-size ( 100%, 50% );</code>
+   <li><b>.bg-size</b></li>
+   <code>.bg-size ( 100%, 50% );</code>
 
    <br/>
    <h3>Box Group</h3>
@@ -72,6 +72,14 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <code>.rounded ( 10px );</code>
    <br/>
    <code>.rounded ( 3px 2px 4px 10px );</code>
+   <br/>
+   <code>.rounded ( top, 5 );</code>
+   <br/>
+   <code>.rounded ( right, 5 );</code>
+   <br/>
+   <code>.rounded ( bottom, 5 );</code>
+   <br/>
+   <code>.rounded ( left, 5 );</code>
 
    <br/>
    <h3>Transform Group</h3>
@@ -105,7 +113,7 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <br/>
    <code>.scale ( y, 1.3 );</code>
    <br/>
-   <code>.scale3d ( z, .7 );</code>
+   <code>.scale ( z, .7 );</code>
 
    <li><b>.scale3d</b></li>
    <code>.scale3d ( .4, .5, 1.2 );</code>
