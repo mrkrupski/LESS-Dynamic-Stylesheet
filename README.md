@@ -1,7 +1,6 @@
 LESS DSS (dynamic stylesheet)
 =============
 
-<h4><b>LESS DSS</b> is all what you need to fast create a modern websites.</h4>
 It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://lesscss.org" target="_blank">lesscss.org</a>.
 <br/>I recommend a "<a href="http://incident57.com/codekit/" target="_blank">CodeKit</a>" app for the auto compress (OS X).
 
