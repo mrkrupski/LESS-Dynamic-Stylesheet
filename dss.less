@@ -1,5 +1,5 @@
 /*
- LESS DSS (dynamic stylesheet) 1.8.4 (for less.js 1.3.0+)
+ LESS DSS (dynamic stylesheet) 1.8.5 (for less.js 1.3+)
  MORE INFO: http://cl.ly/Dqnr
 
  LESS mixins by Chris Krupski
@@ -13,10 +13,9 @@
   background-color: @endColor;
   background-image: -webkit-gradient(linear, left center, right center, from(@startColor),to(@endColor));
   background-image: -webkit-linear-gradient(left, @startColor, @endColor);
-  background-image: -moz-linear-gradient(left, @startColor, @endColor);
-  background-image: -o-linear-gradient(left, @startColor, @endColor);
-  background-image: -ms-linear-gradient(left, @startColor, @endColor);
-  background-image: linear-gradient(left, @startColor, @endColor);
+  background-image:    -moz-linear-gradient(left, @startColor, @endColor);
+  background-image:      -o-linear-gradient(left, @startColor, @endColor);
+  background-image:         linear-gradient(left, @startColor, @endColor);
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
 }
 
@@ -26,10 +25,9 @@
     background-color: mix(@startColor, @endColor, 60%);
     background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
     background-image: -webkit-linear-gradient(top, @startColor, @endColor);
-    background-image: -moz-linear-gradient(top, @startColor, @endColor);
-    background-image: -o-linear-gradient(top, @startColor, @endColor);
-    background-image: -ms-linear-gradient(top, @startColor, @endColor); /* IE 10+ */
-    background-image: linear-gradient(top, @startColor, @endColor);
+    background-image:    -moz-linear-gradient(top, @startColor, @endColor);
+    background-image:      -o-linear-gradient(top, @startColor, @endColor);
+    background-image:         linear-gradient(top, @startColor, @endColor);
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
   }
 
@@ -37,20 +35,18 @@
     background: mix(@middleColor1, @middleColor2, 50%);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(50%, @middleColor1), color-stop(51%, @middleColor2), color-stop(100%, @endColor));
     background-image: -webkit-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-    background-image: -moz-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-    background-image: -o-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
-    background-image: -ms-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%); /* IE 10+ */
-    background-image: linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
+    background-image:    -moz-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
+    background-image:      -o-linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
+    background-image:         linear-gradient(top, @startColor 0%, @middleColor1 50%, @middleColor2 51%, @endColor 100%);
   }
 
   .gradient-v3colors (@startColor: #00b3ee, @middleColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
     background-color: mix(@middleColor, @endColor, 80%);
     background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), color-stop(@colorStop, @middleColor), to(@endColor));
     background-image: -webkit-linear-gradient(@startColor, @middleColor @colorStop, @endColor);
-    background-image: -moz-linear-gradient(top, @startColor, @middleColor @colorStop, @endColor);
-    background-image: -ms-linear-gradient(@startColor, @middleColor @colorStop, @endColor); /* IE 10+ */
-    background-image: -o-linear-gradient(@startColor, @middleColor @colorStop, @endColor);
-    background-image: linear-gradient(@startColor, @middleColor @colorStop, @endColor);
+    background-image:    -moz-linear-gradient(top, @startColor, @middleColor @colorStop, @endColor);
+    background-image:      -o-linear-gradient(@startColor, @middleColor @colorStop, @endColor);
+    background-image:         linear-gradient(@startColor, @middleColor @colorStop, @endColor);
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='%d', endColorstr='%d')", @startColor, @endColor));
   }
 
@@ -60,33 +56,30 @@
   background-color: @outerColor;
   background-image: -webkit-gradient(radial, 50% 50%, 200, 50% 50%, 20, from(@outerColor), to(@innerColor));
   background-image: -webkit-radial-gradient(50% 50%, @innerColor, @outerColor);
-  background-image: -moz-radial-gradient(50% 50%, @innerColor, @outerColor);
-  background-image: -o-radial-gradient(50% 50%, @innerColor, @outerColor);
-  background-image: -ms-radial-gradient(50% 50%, @innerColor, @outerColor); /* IE 10+ */
-  background-image: radial-gradient(50% 50%, @innerColor, @outerColor);
+  background-image:    -moz-radial-gradient(50% 50%, @innerColor, @outerColor);
+  background-image:      -o-radial-gradient(50% 50%, @innerColor, @outerColor);
+  background-image:         radial-gradient(50% 50%, @innerColor, @outerColor);
 }
 
 .gradient-direction (@startColor: #555, @endColor: #333, @degrees: 45) {
   background: @endColor;
   background-image: -webkit-gradient(linear, ~"@{degrees}deg", from(@startColor), to(@endColor));
   background-image: -webkit-linear-gradient(~"@{degrees}deg", @startColor, @endColor);
-  background-image: -moz-linear-gradient(~"@{degrees}deg", @startColor, @endColor);
-  background-image: -o-linear-gradient(~"@{degrees}deg", @startColor, @endColor);
-  background-image: -ms-linear-gradient(~"@{degrees}deg", @startColor, @endColor); /* IE 10+ */
-  background-image: linear-gradient(~"@{degrees}deg", @startColor, @endColor);
+  background-image:    -moz-linear-gradient(~"@{degrees}deg", @startColor, @endColor);
+  background-image:      -o-linear-gradient(~"@{degrees}deg", @startColor, @endColor);
+  background-image:         linear-gradient(~"@{degrees}deg", @startColor, @endColor);
 }
 
 /* @group background-clip() */
 
   .bg-clip (@type: border-box) when (@type = border-box), (@type = padding-box), (@type = content-box) { /* ( border-box | padding-box | content-box ) */
     -webkit-background-clip: @type;
-    /* -moz-background-clip: @type; Firefox 3.6 */
             background-clip: @type;
   }
 
   .bg-clip (@type: border) when not (@type = border-box) and not (@type = padding-box) and not (@type = content-box) { /* ( border-box | padding-box | content-box ) */
     -webkit-background-clip: ~"@{type}-box";
-    /* -moz-background-clip: @type; Firefox 3.6 */
+       -moz-background-clip: @type;
             background-clip: ~"@{type}-box";
   }
 
@@ -94,7 +87,6 @@
 
 .bg-size (@value) {
   -webkit-background-size: @value;
-  /* -moz-background-size: @value; */
           background-size: @value;
 }
 
@@ -159,14 +151,12 @@
 
   .box-shadow-init (@all) {
     -webkit-box-shadow: @all;
-    /* -moz-box-shadow: @all; */
             box-shadow: @all;
   }
 
   .box-shadow (@values: "1px 1px 2px #000, 0 0 4px #fff, inset 1px 3px 2px #000") { /* for multi values */
-    -webkit-box-shadow: e(@values); /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    /* -moz-box-shadow: e(@values); FF3.5 - 3.6 */
-            box-shadow: e(@values); /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+    -webkit-box-shadow: e(@values);
+            box-shadow: e(@values);
   }
 
   .box-shadow (@option, @values) when (@option = in) {
@@ -197,48 +187,39 @@
 /* @group rounded() */
 
   .rounded (@radius: 2px) {
-    -webkit-border-radius: @radius; /* Saf3-4, iOS 1-3.2, Android ≤1.6 */
-    /* -moz-border-radius: @radius; FF1-3.6 */
+    -webkit-border-radius: @radius;
             border-radius: @radius;
   }
 
   .rounded (top, @value: 4) {
     -webkit-border-top-left-radius: @value * 1px;
-    /* -moz-border-top-left-radius: @value * 1px; */
             border-top-left-radius: @value * 1px;
     
     -webkit-border-top-right-radius: @value * 1px;
-    /* -moz-border-top-right-radius: @value * 1px; */
             border-top-right-radius: @value * 1px;
   }
 
   .rounded (right, @value: 4) {
     -webkit-border-top-right-radius: @value * 1px;
-    /* -moz-border-top-right-radius: @value * 1px; */
             border-top-right-radius: @value * 1px;
 
     -webkit-border-bottom-right-radius: @value * 1px;
-    /* -moz-border-bottom-right-radius: @value * 1px; */
             border-bottom-right-radius: @value * 1px;
   }
 
   .rounded (bottom, @value: 4) {
     -webkit-border-bottom-right-radius: @value * 1px;
-    /* -moz-border-bottom-right-radius: @value * 1px; */
             border-bottom-right-radius: @value * 1px;
 
     -webkit-border-bottom-left-radius: @value * 1px;
-    /* -moz-border-bottom-left-radius: @value * 1px; */
             border-bottom-left-radius: @value * 1px;
   }
 
   .rounded (left, @value: 4) {
     -webkit-border-top-left-radius: @value * 1px;
-    /* -moz-border-top-left-radius: @value * 1px; */
             border-top-left-radius: @value * 1px;
 
     -webkit-border-bottom-left-radius: @value * 1px;
-    /* -moz-border-bottom-left-radius: @value * 1px; */
             border-bottom-left-radius: @value * 1px;
   }
 
@@ -473,7 +454,6 @@
 .transition (@property: property, @duration: 0.2s, @timing: ease-out, @delay: 0) {
   -webkit-transition: @arguments;
      -moz-transition: @property @duration @timing ~"@{delay}s";
-      -ms-transition: @arguments; /* IE 10+ */
        -o-transition: @arguments; /* Opera 10.5+ */
           transition: @arguments;
 }
@@ -485,14 +465,12 @@
 .animate (@name: none, @duration: 2s, @timing: ease, @delay: 0, @iteration-count: 1, @direction: normal) {
   -webkit-animation: @name @duration @timing @delay @iteration-count @direction; /* Saf5, Chrome */
      -moz-animation: @name @duration @timing ~"@{delay}s" @iteration-count @direction; /* FF5+ */
-      -ms-animation: @name @duration @timing @delay @iteration-count @direction; /* IE 10+ */
        -o-animation: @name @duration @timing @delay @iteration-count @direction; /* Opera 12+ */
 }
 
 .animation-state (@state: running) { /* ( paused | running ) */
   -webkit-animation-play-state: @state;
      -moz-animation-play-state: @state;
-      -ms-animation-play-state: @state; /* IE 10+ */
           animation-play-state: @state;
 }
 

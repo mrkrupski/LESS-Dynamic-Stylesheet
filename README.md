@@ -30,6 +30,8 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
 
    <li><b>.bg-clip</b></li>
    <code>.bg-clip ( border-box );</code>
+   <br/>
+   <code>.bg-clip ( border );</code>
 
    <li><b>.bg-size</b></li>
    <code>.bg-size ( 100%, 50% );</code>
@@ -59,6 +61,8 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <code>.box-shadow ( in, 0 1px 4px #ddd );</code> (inset)
    <br/>
    <code>.box-shadow ( out, 0 1px 4px rgba(0,0,0, .5) );</code> (outset)
+   <br/>
+   <code>.box-shadow ( 0 1px 4px, #ccc, 45% );</code> (alpha)
 
    <br/>
    <h3>Border Group</h3>
