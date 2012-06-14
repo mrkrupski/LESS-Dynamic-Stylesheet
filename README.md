@@ -214,5 +214,3 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <li><b>.clearfix</b></li>
    <code>.clearfix;</code>
 </ul>
-
-<br/>More info on: <a href="http://mrkrupski.github.com/LESS-Dynamic-Stylesheet/" target="_blank">mrkrupski.github.com/LESS-Dynamic-Stylesheet/</a>
