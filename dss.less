@@ -1,5 +1,5 @@
 /*
- LESS DSS (dynamic stylesheet) 1.8.3 (for less.js 1.3.0+)
+ LESS DSS (dynamic stylesheet) 1.8.4 (for less.js 1.3.0+)
  MORE INFO: http://cl.ly/Dqnr
 
  LESS mixins by Chris Krupski
@@ -76,11 +76,21 @@
   background-image: linear-gradient(~"@{degrees}deg", @startColor, @endColor);
 }
 
-.bg-clip (@type: border-box) { /* ( border-box | padding-box | content-box ) */
-  -webkit-background-clip: @type;
-  /* -moz-background-clip: @type; Firefox 3.6 */
-          background-clip: @type;
-}
+/* @group background-clip() */
+
+  .bg-clip (@type: border-box) when (@type = border-box), (@type = padding-box), (@type = content-box) { /* ( border-box | padding-box | content-box ) */
+    -webkit-background-clip: @type;
+    /* -moz-background-clip: @type; Firefox 3.6 */
+            background-clip: @type;
+  }
+
+  .bg-clip (@type: border) when not (@type = border-box) and not (@type = padding-box) and not (@type = content-box) { /* ( border-box | padding-box | content-box ) */
+    -webkit-background-clip: ~"@{type}-box";
+    /* -moz-background-clip: @type; Firefox 3.6 */
+            background-clip: ~"@{type}-box";
+  }
+
+/* @end */
 
 .bg-size (@value) {
   -webkit-background-size: @value;
@@ -147,22 +157,28 @@
 
 /* @group box-shadow() */
 
+  .box-shadow-init (@all) {
+    -webkit-box-shadow: @all;
+    /* -moz-box-shadow: @all; */
+            box-shadow: @all;
+  }
+
   .box-shadow (@values: "1px 1px 2px #000, 0 0 4px #fff, inset 1px 3px 2px #000") { /* for multi values */
     -webkit-box-shadow: e(@values); /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     /* -moz-box-shadow: e(@values); FF3.5 - 3.6 */
             box-shadow: e(@values); /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
   }
 
-  .box-shadow (in, @value) {
-    -webkit-box-shadow: inset @value;
-    /* -moz-box-shadow: inset @value; */
-            box-shadow: inset @value;
+  .box-shadow (@option, @values) when (@option = in) {
+    .box-shadow-init(inset @values);
   }
 
-  .box-shadow (out, @value) {
-    -webkit-box-shadow: @value;
-    /* -moz-box-shadow: @value; */
-            box-shadow: @value;
+  .box-shadow (@option, @values) when (@option = out) {
+    .box-shadow-init(@values);
+  }
+
+  .box-shadow (@parameters, @color, @alpha) when (isnumber(@alpha)) {
+    .box-shadow-init(@parameters fade(@color, @alpha));
   }
 
 /* @end */

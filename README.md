@@ -28,8 +28,8 @@ It's a set of useful mixins for LESS, the CSS pre-processor: <a href="http://les
    <li><b>.gradient-direction</b></li>
    <code>.gradient-direction ( #fff, #aaa, 120 );</code>
 
-   <li><b>.bg-clip</b> - (value without the '-box' add support for older browsers)</li>
-   <code>.bg-clip ( border );</code>
+   <li><b>.bg-clip</b></li>
+   <code>.bg-clip ( border-box );</code>
 
    <li><b>.bg-size</b></li>
    <code>.bg-size ( 100%, 50% );</code>
